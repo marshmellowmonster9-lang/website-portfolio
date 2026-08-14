@@ -4,6 +4,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+try {
 (function($) {
 
 	var	$window = $(window),
@@ -12,10 +13,13 @@
 
 			// Carousels
 				carousels: {
-					speed: 4,
+					speed: 1.2,
 					fadeIn: true,
 					fadeDelay: 250
 				},
+
+				// Hero background video behaviour: after the intro animations finish, crossfade the looping video in.
+				heroVideoDelay: 1600,
 
 		};
 
@@ -32,6 +36,23 @@
 		$window.on('load', function() {
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
+
+				// After the hero intro animations are complete, fade the background video in.
+				window.setTimeout(function() {
+					var v = document.getElementById('hero-bg-video');
+					if (v) {
+						// Ensure muted/autoplay inline behaviour, try to play and then crossfade.
+						v.muted = true;
+						v.playsInline = true;
+						var p = v.play();
+						if (p !== undefined) {
+							p.then(function() { $(v).addClass('visible'); }).catch(function() { /* Autoplay blocked, user interaction required */ });
+						} else {
+							$(v).addClass('visible');
+						}
+					}
+				}, settings.heroVideoDelay);
+
 			}, 100);
 		});
 
@@ -214,4 +235,74 @@
 
 		});
 
-})(jQuery);
+		// Map featured showcase slides to project pages so clicks navigate directly.
+		$(function() {
+			var map = {
+				'The City & The City': 'project-city.html',
+				'Rogue Directive: Genesis': 'rogue-directive.html',
+				'Post-Apocalyptic Rome': 'post-apocalyptic-rome.html',
+				'Philippines Lyra Map': 'philippines-lyra.html',
+				'Phantom Paws': 'phantom-paws.html',
+				'Studio Prototype': 'project-city.html',
+				'Between Two Crowns': 'between-two-crowns.html'
+			};
+
+			$('.portfolio-showcase__slide').each(function() {
+				var $slide = $(this);
+				var title = $slide.find('.portfolio-showcase__overlay h3').text().trim();
+				var href = map[title] || '#projects';
+				$slide.find('a.portfolio-showcase__link').attr('href', href);
+			});
+
+			// Lightbox for galleries and level flows.
+			$('body').append('<div id="lightbox-overlay" role="dialog" aria-hidden="true"><div id="lightbox-content"></div><button id="lightbox-close" aria-label="Close">✕</button></div>');
+
+			function openLightbox(element) {
+				var $overlay = $('#lightbox-overlay');
+				var $content = $('#lightbox-content');
+				$content.empty();
+				var tag = element.prop('tagName').toLowerCase();
+				if (tag === 'img') {
+					var src = element.attr('src');
+					$('<img>').attr('src', src).appendTo($content);
+				} else if (tag === 'video') {
+					var clone = element.clone();
+					clone.attr('controls', true).css({width:'100%', height:'auto'}).appendTo($content);
+				} else if (element.data('lightbox-src')) {
+					var src = element.data('lightbox-src');
+					if (src.match(/\.mp4$/)) {
+						$('<video controls playsinline>').attr('src', src).appendTo($content);
+					} else {
+						$('<img>').attr('src', src).appendTo($content);
+					}
+				}
+				$overlay.addClass('visible').attr('aria-hidden','false');
+			}
+
+			function closeLightbox() {
+				$('#lightbox-overlay').removeClass('visible').attr('aria-hidden','true');
+				$('#lightbox-content').empty();
+			}
+
+			// Attach gallery click handlers
+			$(document).on('click', '.project-gallery img, .project-gallery video, .project-gallery [data-lightbox-src]', function(e){
+				e.preventDefault();
+				openLightbox($(this));
+			});
+
+			// Close handlers
+			$(document).on('click', '#lightbox-close, #lightbox-overlay', function(e){
+				if (e.target.id === 'lightbox-overlay' || e.target.id === 'lightbox-close') closeLightbox();
+			});
+			$(document).on('keyup', function(e){ if (e.key === 'Escape') closeLightbox(); });
+
+			
+
+			// Featured showcase — keep CSS-driven animation looping. Dragging and pointer handlers disabled to simplify behaviour.
+			(function() {
+				// No JS dragging: CSS animation 'portfolio-scroll' handles continuous loop.
+				// This is intentionally left empty to avoid pointer event conflicts.
+			})();
+			});
+		})(jQuery);
+} catch (e) { console.error('main.js error', e); }

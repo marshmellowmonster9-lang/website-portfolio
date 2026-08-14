@@ -1,75 +1,122 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-    <title>The City & The City | Zak Brown</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-</head>
+	<head>
+		<title>Project City | Zak Brown</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="project-page">
+		<div class="project-shell">
+			<nav class="project-nav" aria-label="Project navigation">
+				<a class="project-nav__link" href="index.html">← Back to portfolio</a>
+				<div class="project-nav__menu">
+					<a href="#overview">Overview</a>
+					<a href="#gallery">Gallery</a>
+					<a href="#contact">Contact</a>
+				</div>
+			</nav>
 
-<body>
-<div id="page-wrapper">
+			<header class="project-hero" style="background-image: url('images/project-city/Main.png')">
+				<div class="project-hero__content">
+					<p class="project-hero__eyebrow">Environment Art — City</p>
+					<h1>The Office - 1970s Detective Interior</h1>
+					<p>Large-scale urban environment emphasising mood, composition and storytelling through props and lighting.</p>
+				</div>
+			</header>
 
-    <nav>
-        <a href="index.html">← Back to Work</a>
-    </nav>
+			<section id="overview" class="project-section">
+				<div class="project-grid">
+					<div class="project-card project-card--feature">
+						<div class="project-section__header">
+							<h2>Overview</h2>
+							<p>This project focuses on architectural storytelling, material quality, and cinematic lighting. A short cinematic and several in-engine captures illustrate the project's progression.</p>
+						</div>
+						<p class="project-quote">"A study in atmosphere, scale, and purposeful clutter to support narrative beats."</p>
+					</div>
+					<aside class="project-card">
+						<h3>Key Details</h3>
+						<ul class="project-stat-list">
+							<li><strong>Role:</strong> Environment Artist</li>
+							<li><strong>Tools:</strong> Unreal Engine, Substance Painter</li>
+							<li><strong>Assets:</strong> Large-scale modular sets, bespoke props</li>
+						</ul>
+					</aside>
+				</div>
+			</section>
 
-    <!-- HERO -->
-    <section class="wrapper style1">
-        <div class="container">
-            <header>
-                <h1>The City & The City</h1>
-                <p>Environment Art</p>
-            </header>
+			<section id="Video" class="project-section project-gallery--fullwidth">
+				<div class="project-section__header">
+					<h2>Cinematic Video</h2>
+					<p>Cinematic Render</p>
+				</div>
+				<div class="project-gallery">
+					<video controls src="images/project-city/CinematicVideo.mp4" poster="images/project-city/Main.png"></video>
+				</div>
+			</section>
 
-            <span class="image featured">
-                <img src="images/Home.png" alt="">
-            </span>
-        </div>
-    </section>
+			<section id="gallery" class="project-section project-gallery--fullwidth">
+				<div class="project-section__header">
+					<h2>Gallery</h2>
+					<p>Renders, in-engine captures and cinematic excerpts.</p>
+				</div>
+				<div class="project-gallery">
+					<img src="images/project-city/Main.png" alt="Main" />
+					<img src="images/project-city/LowShot.jpeg" alt="Low shot" />
+					<img src="images/project-city/RecordPlayer.jpeg" alt="Record player prop" />
+					<img src="images/project-city/VertexPainting.png" alt="Vertex painting" />
+					<img src="images/project-city/Values.jpeg" alt="Values" />
+					<img src="images/project-city/GodRays.jpeg" alt="God rays" />
+				</div>
+			</section>
 
-    <!-- OVERVIEW -->
-    <section class="wrapper style2">
-        <div class="container">
-            <h2>Overview</h2>
+		<section id="breakdown" class="project-section">
+			<div class="project-section__header">
+				<h2>Technical breakdown</h2>
+				<p>Technical notes, shader work, cinematics and asset pipeline details.</p>
+			</div>
 
-            <ul>
-                <li><strong>Role:</strong> Environment Artist</li>
-                <li><strong>Focus:</strong> Composition, atmosphere, layout</li>
-                <li><strong>Engine:</strong> Unity</li>
-            </ul>
+			<div class="breakdown-list">
+				<div class="breakdown-item">
+					<div><img src="images/project-city/Values.jpeg" alt="Values"></div>
+					<div class="breakdown-text">
+						<h3>Values</h3>
+						<p>Short cinematic used to test composition, atmosphere and post-processing. Include notes about sequencing and camera rigs.</p>
+					</div>
+				</div>
+			</div>
 
-            <p>
-                Brief description of the project. Explain intent, mood, and what you were trying to achieve.
-            </p>
-        </div>
-    </section>
+			<div class="breakdown-list">
+				<div class="breakdown-item">
+					<div><img src="images/project-city/RenderWithMaps.png" alt="Render with maps" /></div>
+					<div class="breakdown-text">
+						<h3>Materials & maps</h3>
+						<p>Used packed textures and custom material instances to reduce draw calls. Detail on UV packing and mask usage can be added here.</p>
+					</div>
+			</div>
 
-    <!-- BREAKDOWN -->
-    <section class="wrapper style1">
-        <div class="container">
-            <h2>Breakdown</h2>
+			<div class="breakdown-list">
+				<div class="breakdown-item">
+					<div><img src="images/project-city/VertexPainting.jpeg" alt="Vertex painting"></div>
+					<div class="breakdown-text">
+						<h3>Vertex Painting</h3>
+						<p>Short cinematic used to test composition, atmosphere and post-processing. Include notes about sequencing and camera rigs.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		</div>
 
-            <h3>Blockout</h3>
-            <img src="images/pic10.jpg" alt="">
+	<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
-            <h3>Environment Assets</h3>
-            <img src="images/pic11.jpg" alt="">
-
-            <h3>Lighting</h3>
-            <img src="images/pic12.jpg" alt="">
-        </div>
-    </section>
-
-    <!-- REFLECTION -->
-    <section class="wrapper style2">
-        <div class="container">
-            <h2>Reflection</h2>
-            <p>
-                What you learned, what you would improve, technical challenges.
-            </p>
-        </div>
-    </section>
-
-</div>
-</body>
+	</body>
 </html>

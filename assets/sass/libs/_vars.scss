@@ -1,6 +1,6 @@
 // Misc.
 	$misc: (
-		z-index-base:	10000
+		z-index-base: 10000
 	);
 
 // Duration.
@@ -10,13 +10,46 @@
 
 // Size.
 	$size: (
-		navPanel: 50vh
+		navPanel: 50vh,
+		container: 1400px,
+		container-wide: 1200px,
+		container-full: 100%
 	);
 
 // Font.
 	$font: (
+		family: ('Source Sans Pro', sans-serif),
+		base-size: 15pt,
+		base-line-height: 1.85em,
+		small-size: 12.5pt,
+		heading-h2: 2.85em,
+		heading-h3: 1.25em,
+		heading-h1-homepage: 4em,
+		heading-h1-mobile: 1.75em
 	);
 
 // Palette.
 	$palette: (
+		background: #f0f4f4,
+		text: #5b5b5b,
+		heading: #483949,
+		link: inherit,
+		link-hover: #ef8376,
+		border: rgba(128, 128, 128, 0.2),
+		border-muted: rgba(128, 128, 128, 0.15),
+		border-strong: rgba(192, 192, 192, 0.35),
+		border-light: #E5E5E5,
+		surface: #fff,
+		surface-muted: #fafafa,
+		action: #df7366,
+		action-hover: #ef8376,
+		action-alt: #2B252C,
+		action-alt-hover: #3B353C,
+		footer: #2b252c,
+		footer-text: #fff,
+		button-text: #fff,
+		footer-muted: rgba(128, 128, 128, 0.75),
+		footer-muted-hover: rgba(212, 212, 212, 0.85),
+		overlay: rgba(255, 255, 255, 0.975),
+		shadow: rgba(0, 0, 0, 0.25)
 	);
