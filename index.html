@@ -45,7 +45,7 @@
 								</div>
 							</header>
 							<footer>
-								<a href="#showreel" class="button hero-cta, Scrolly">View Portfolio</a>
+								<a href="#showreel" class="button hero-cta scrolly">View Showreel</a>
 							</footer>
 						</div>
 
@@ -64,7 +64,7 @@
 										<li><a href="philippines-lyra.html">Philippines Lyra Map</a></li>
 										<li><a href="between-two-crowns.html">Between Two Crowns</a></li>
 										<li><a href="phantom-paws.html">Phantom Paws</a></li>
-										<li><a href="props-carnival-ticket-booth.html">Props</a></li>
+										<li><a href="props.html">Props</a></li>
 									</ul>
 								</li>
 								<li><a href="#showreel" class="scrolly">Showreel</a></li>
@@ -164,7 +164,7 @@
 							<!-- Post-Apocalyptic Rome -->
 							 <article class="portfolio-showcase__slide">
 								<a href="post-apocalyptic-rome.html" class="portfolio-showcase__link">
-									<div class="portfolio-showcase__image" style="background-image: url('images/placeholders/pic04.jpg');"></div>
+									<div class="portfolio-showcase__image" style="background-image: url('images/post-apocalyptic-rome/Banner.png');"></div>
 									<div class="portfolio-showcase__overlay">
 										<h3>Post-Apocalyptic Rome</h3>
 										<p>Traversal and combat flow balanced with immersive ruins and scale.</p>
@@ -175,7 +175,7 @@
 							<!-- Philippines Lyra Map -->
 							<article class="portfolio-showcase__slide">
 								<a href="philippines-lyra.html" class="portfolio-showcase__link">
-									<div class="portfolio-showcase__image" style="background-image: url('images/placeholders/pic05.jpg');"></div>
+									<div class="portfolio-showcase__image" style="background-image: url('images/philippines-lyra/HighresScreenshot00000.png');"></div>
 									<div class="portfolio-showcase__overlay">
 										<h3>Philippines Lyra Map</h3>
 										<p>Competitive arena play shaped by sightlines, flow, and visual clarity.</p>
@@ -206,13 +206,13 @@
 							<p>I'm a 3D Environment Artist passionate about creating immersive, atmospheric environments and engaging experiences. With strong skills in environment art and level design, I focus on crafting visually compelling spaces that enhance gameplay and storytelling.</p>
 						</header>
 						<a href="#" class="image featured"><img class="profile-image" src="images/CV/LinkedInPic.jpg" alt="Zak Brown" /></a>
-						<p>
+						<p class="about-body-text">
 							I currently work as a 3D Environment Artist at Matt Murton Digital Ltd., where I create real-time environments, design interactive AR experiences, develop visual effects (VFX), and optimise assets for mobile augmented reality applications. Alongside my professional work, I continue to develop personal projects in Unreal Engine 5 and Unity, expanding my skills in environment art, material creation, lighting, optimisation, and interactive environment design.
 						</p>
-						<p>
+						<p class="about-body-text">
 							I graduated with a First-Class BSc (Hons) in Computer Games Design from the University of Gloucestershire. During my studies, I contributed to multiple award-winning projects, including Rogue Directive: Genesis, which received the Best Group Project 2026 award. My independent VR project, Please Wave Back, was awarded Best Independent Project 2026, recognising my work in designing an immersive virtual reality experience that explored presence and interaction.
 						</p>
-						<p>
+						<p class="about-body-text">
 							I'm always looking for opportunities to learn, create impactful art, solve creative and technical challenges, and collaborate with talented teams.
 						</p>
 						<footer>
@@ -279,28 +279,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-		<!-- Small override: disable pointer dragging for the featured showcase and ensure CSS animation runs (simple, non-interactive loop) -->
-		<script>
-		(function($){
-			$(function(){
-				var $track = $('.portfolio-showcase__track');
-				if (!$track.length) return;
-				// Duplicate track contents once to allow seamless CSS-driven looping (only if not already duplicated)
-				if (!$track.data('duplicated')) {
-					$track.append($track.html());
-					$track.data('duplicated', true);
-				}
-				// Remove pointer handlers added by main.js (if present)
-				$track.off('pointerdown mousedown touchstart').off('.drag');
-				$track.css('animation-play-state','running');
-				// Ensure anchor clicks inside slides remain clickable
-				$track.find('a').off('click.dragprevent');
-				// Hide any carousel arrow elements (not used for this showcase)
-				$('.forward, .backward').hide();
-			});
-		})(jQuery);
-		</script>
 
 	</body>
 </html>

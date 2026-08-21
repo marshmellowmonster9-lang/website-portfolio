@@ -235,57 +235,211 @@ try {
 
 		});
 
-		// Map featured showcase slides to project pages so clicks navigate directly.
 		$(function() {
-			var map = {
-				'The City & The City': 'project-city.html',
-				'Rogue Directive: Genesis': 'rogue-directive.html',
-				'Post-Apocalyptic Rome': 'post-apocalyptic-rome.html',
-				'Philippines Lyra Map': 'philippines-lyra.html',
-				'Phantom Paws': 'phantom-paws.html',
-				'Studio Prototype': 'project-city.html',
-				'Between Two Crowns': 'between-two-crowns.html'
-			};
-
-			$('.portfolio-showcase__slide').each(function() {
-				var $slide = $(this);
-				var title = $slide.find('.portfolio-showcase__overlay h3').text().trim();
-				var href = map[title] || '#projects';
-				$slide.find('a.portfolio-showcase__link').attr('href', href);
-			});
+			// Keep the URLs authored in the HTML; deriving them from display titles made
+			// links silently fall back to the projects anchor when a title changed.
+			var $showcase = $('.portfolio-showcase');
+			var $viewport = $showcase.find('.portfolio-showcase__viewport');
+			var $track = $showcase.find('.portfolio-showcase__track');
+			var $slides = $track.find('.portfolio-showcase__slide');
+			if ($slides.length) {
+				var $dots = $('<div class="portfolio-showcase__dots" role="tablist" aria-label="Featured project groups"></div>');
+				var groupCount = Math.min(3, Math.ceil($slides.length / 3));
+				var activeGroup = 0;
+				for (var i = 0; i < groupCount; i++) {
+					$('<button type="button" role="tab" class="portfolio-showcase__dot" aria-label="Show featured projects ' + (i + 1) + '">')
+						.attr('aria-selected', i === 0 ? 'true' : 'false')
+						.appendTo($dots);
+				}
+				$showcase.append($dots);
+				function showGroup(group) {
+					activeGroup = (group + groupCount) % groupCount;
+					var target = $slides.eq(activeGroup * 3)[0];
+					if (target) {
+						$viewport.stop().animate({ scrollLeft: target.offsetLeft }, 650);
+					}
+					$dots.children().each(function(index) {
+						$(this).attr('aria-selected', index === activeGroup ? 'true' : 'false');
+					});
+				}
+				$dots.on('click', 'button', function() {
+					showGroup($(this).index());
+				});
+				var carouselTimer = window.setInterval(function() { showGroup(activeGroup + 1); }, 9000);
+				$viewport.on('mouseenter focusin touchstart', function() { window.clearInterval(carouselTimer); });
+				$viewport.on('mouseleave focusout touchend', function() {
+					carouselTimer = window.setInterval(function() { showGroup(activeGroup + 1); }, 9000);
+				});
+			}
 
 			// Lightbox for galleries and level flows.
-			$('body').append('<div id="lightbox-overlay" role="dialog" aria-hidden="true"><div id="lightbox-content"></div><button id="lightbox-close" aria-label="Close">✕</button></div>');
+			$('body').append('<div id="lightbox-overlay" role="dialog" aria-hidden="true"><button id="lightbox-prev" class="lightbox-control" aria-label="Previous image">‹</button><div id="lightbox-content"></div><button id="lightbox-next" class="lightbox-control" aria-label="Next image">›</button><button id="lightbox-close" aria-label="Close">✕</button></div>');
 
-			function openLightbox(element) {
+			var lightboxItems = [];
+			var lightboxIndex = 0;
+			var lightboxZoom = 1;
+			var lightboxPanX = 0;
+			var lightboxPanY = 0;
+			var touchZoomDistance = null;
+			var dragState = { active: false, startX: 0, startY: 0, panX: 0, panY: 0, moved: false };
+
+			function getLightboxSource(element) {
+				if (!element || !element.length) return '';
+				return (element.attr('data-lightbox-src') || element.attr('data-full-src') || element.attr('data-hires-src') || element.attr('src') || '').trim();
+			}
+
+			function resetLightboxZoom() {
+				lightboxZoom = 1;
+				lightboxPanX = 0;
+				lightboxPanY = 0;
+				dragState = { active: false, startX: 0, startY: 0, panX: 0, panY: 0, moved: false };
+				var $media = $('#lightbox-content .lightbox-media');
+				if ($media.length) {
+					$media.removeClass('is-zoomed is-dragging').css('transform', 'translate(0px, 0px) scale(1)').css('cursor', 'zoom-in');
+				}
+			}
+
+			function applyLightboxZoom() {
+				var $media = $('#lightbox-content .lightbox-media');
+				if (!$media.length) return;
+				var zoom = Math.max(1, Math.min(lightboxZoom, 5));
+				$media.css('transform', 'translate(' + lightboxPanX + 'px, ' + lightboxPanY + 'px) scale(' + zoom + ')')
+					.toggleClass('is-zoomed', zoom > 1)
+					.css('cursor', zoom > 1 ? 'grab' : 'zoom-in');
+			}
+
+			function renderLightbox() {
 				var $overlay = $('#lightbox-overlay');
 				var $content = $('#lightbox-content');
 				$content.empty();
-				var tag = element.prop('tagName').toLowerCase();
-				if (tag === 'img') {
-					var src = element.attr('src');
-					$('<img>').attr('src', src).appendTo($content);
+				var element = lightboxItems[lightboxIndex];
+				if (!element) return;
+				var $element = $(element);
+				var tag = $element.prop('tagName').toLowerCase();
+				var lightboxCaption = $element.attr('data-lightbox-caption');
+				var source = getLightboxSource($element);
+				if (tag === 'img' || source.match(/\.(png|jpe?g|webp|avif|gif|bmp|svg)$/i)) {
+					var $img = $('<img class="lightbox-media" alt="">').attr('src', source).attr('alt', $element.attr('alt') || 'Project image');
+					$img.on('click', function(e) {
+						e.preventDefault();
+						e.stopPropagation();
+						if (dragState.moved) {
+							dragState.moved = false;
+							return;
+						}
+						if (lightboxZoom > 1) {
+							lightboxZoom = 1;
+							lightboxPanX = 0;
+							lightboxPanY = 0;
+						} else {
+							lightboxZoom = 2;
+						}
+						applyLightboxZoom();
+					});
+					$img.on('pointerdown', function(e) {
+						e.preventDefault();
+						e.stopPropagation();
+						if (lightboxZoom <= 1) return;
+						dragState.active = true;
+						dragState.startX = e.clientX;
+						dragState.startY = e.clientY;
+						dragState.panX = lightboxPanX;
+						dragState.panY = lightboxPanY;
+						dragState.moved = false;
+						$img.addClass('is-dragging');
+					});
+					$img.on('pointermove', function(e) {
+						if (!dragState.active) return;
+						var dx = e.clientX - dragState.startX;
+						var dy = e.clientY - dragState.startY;
+						if (Math.abs(dx) > 1 || Math.abs(dy) > 1) dragState.moved = true;
+						lightboxPanX = dragState.panX + dx;
+						lightboxPanY = dragState.panY + dy;
+						applyLightboxZoom();
+					});
+					$img.on('pointerup pointerleave pointercancel', function() {
+						if (dragState.active) {
+							dragState.active = false;
+							$img.removeClass('is-dragging');
+						}
+					});
+					$img.on('wheel', function(e) {
+						e.preventDefault();
+						e.stopPropagation();
+						var delta = e.originalEvent.deltaY < 0 ? 0.18 : -0.18;
+						lightboxZoom = Math.max(1, Math.min(5, lightboxZoom + delta));
+						if (lightboxZoom === 1) { lightboxPanX = 0; lightboxPanY = 0; }
+						applyLightboxZoom();
+					});
+					$img.on('touchstart', function(e) {
+						if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches.length === 2) {
+							var t1 = e.originalEvent.touches[0];
+							var t2 = e.originalEvent.touches[1];
+							touchZoomDistance = Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY) || null;
+						}
+					});
+					$img.on('touchmove', function(e) {
+						if (!e.originalEvent || !e.originalEvent.touches || e.originalEvent.touches.length !== 2 || !touchZoomDistance) return;
+						e.preventDefault();
+						var t1 = e.originalEvent.touches[0];
+						var t2 = e.originalEvent.touches[1];
+						var distance = Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY) || touchZoomDistance;
+						if (distance > 0 && touchZoomDistance > 0) {
+							lightboxZoom = Math.max(1, Math.min(5, lightboxZoom * (distance / touchZoomDistance)));
+							touchZoomDistance = distance;
+							if (lightboxZoom === 1) { lightboxPanX = 0; lightboxPanY = 0; }
+							applyLightboxZoom();
+						}
+					});
+					$img.on('touchend touchcancel', function() { touchZoomDistance = null; });
+					$img.appendTo($content);
 				} else if (tag === 'video') {
 					var clone = element.clone();
 					clone.attr('controls', true).css({width:'100%', height:'auto'}).appendTo($content);
-				} else if (element.data('lightbox-src')) {
-					var src = element.data('lightbox-src');
-					if (src.match(/\.mp4$/)) {
-						$('<video controls playsinline>').attr('src', src).appendTo($content);
-					} else {
-						$('<img>').attr('src', src).appendTo($content);
-					}
+				} else if (source.match(/\.mp4$/i)) {
+					$('<video class="lightbox-media" controls playsinline>').attr('src', source).appendTo($content);
+				} else {
+					$('<img class="lightbox-media" alt="">').attr('src', source).appendTo($content);
 				}
+				if (lightboxCaption) $('<p class="lightbox-caption"></p>').text(lightboxCaption).appendTo($content);
+				$('#lightbox-prev, #lightbox-next').toggle(lightboxItems.length > 1);
+				resetLightboxZoom();
 				$overlay.addClass('visible').attr('aria-hidden','false');
 			}
+
+			function openLightbox(element) {
+				var $element = $(element);
+				var $gallery = $element.closest('.project-gallery');
+				var collection = $gallery.length
+					? $gallery.find('img, video, [data-lightbox-src], [data-full-src], [data-hires-src]').toArray()
+					: [$element[0]];
+				lightboxItems = collection;
+				lightboxIndex = Math.max(0, collection.indexOf($element[0]));
+				renderLightbox();
+			}
+
+			function moveLightbox(step) {
+				if (lightboxItems.length < 2) return;
+				lightboxIndex = (lightboxIndex + step + lightboxItems.length) % lightboxItems.length;
+				renderLightbox();
+			}
+
+			$('.project-gallery img[data-gallery-caption]').each(function() {
+				var $image = $(this);
+				if ($image.parent().is('figure')) return;
+				$image.wrap('<figure class="gallery-figure"></figure>');
+				$('<figcaption></figcaption>').text($image.attr('data-gallery-caption')).appendTo($image.parent());
+			});
 
 			function closeLightbox() {
 				$('#lightbox-overlay').removeClass('visible').attr('aria-hidden','true');
 				$('#lightbox-content').empty();
+				lightboxZoom = 1;
+				lightboxIndex = 0;
 			}
 
 			// Attach gallery click handlers
-			$(document).on('click', '.project-gallery img, .project-gallery video, .project-gallery [data-lightbox-src]', function(e){
+			$(document).on('click', '.project-gallery:not(.project-gallery--links) img, .project-gallery:not(.project-gallery--links) video, .project-gallery:not(.project-gallery--links) [data-lightbox-src], .project-gallery:not(.project-gallery--links) [data-full-src], .project-gallery:not(.project-gallery--links) [data-hires-src], .breakdown-item img, .breakdown-item video', function(e){
 				e.preventDefault();
 				openLightbox($(this));
 			});
@@ -294,15 +448,39 @@ try {
 			$(document).on('click', '#lightbox-close, #lightbox-overlay', function(e){
 				if (e.target.id === 'lightbox-overlay' || e.target.id === 'lightbox-close') closeLightbox();
 			});
-			$(document).on('keyup', function(e){ if (e.key === 'Escape') closeLightbox(); });
+			$(document).on('click', '#lightbox-prev', function() { moveLightbox(-1); });
+			$(document).on('click', '#lightbox-next', function() { moveLightbox(1); });
+			$(document).on('keyup', function(e){
+				if (e.key === 'Escape') closeLightbox();
+				if ($('#lightbox-overlay').hasClass('visible') && e.key === 'ArrowLeft') moveLightbox(-1);
+				if ($('#lightbox-overlay').hasClass('visible') && e.key === 'ArrowRight') moveLightbox(1);
+			});
 
-			
+			function setupCinematicVideo() {
+				$('.project-page .project-shell').each(function() {
+					var $shell = $(this);
+					var $existing = $shell.find('.cinematic-video').first();
+					var pageVideo = $shell.attr('data-cinematic-video') || $('body').attr('data-cinematic-video');
+					if ($existing.length) {
+						var src = $existing.attr('data-cinematic-video') || $existing.find('video').attr('src');
+						if (src && !$existing.find('video').length) {
+							$('<video class="project-video" controls autoplay muted loop playsinline></video>').attr('src', src).appendTo($existing);
+						}
+						return;
+					}
+					if (!pageVideo) return;
+					var $section = $('<section class="project-section cinematic-video" data-cinematic-video="' + pageVideo + '"><div class="project-section__header"><h2>Cinematic Video</h2><p>Project cinematic presentation.</p></div><video class="project-video" controls autoplay muted loop playsinline></video></section>');
+					$section.find('video').attr('src', pageVideo);
+					$section.insertAfter($shell.find('#overview'));
+				});
+			}
 
-			// Featured showcase — keep CSS-driven animation looping. Dragging and pointer handlers disabled to simplify behaviour.
-			(function() {
-				// No JS dragging: CSS animation 'portfolio-scroll' handles continuous loop.
-				// This is intentionally left empty to avoid pointer event conflicts.
-			})();
-			});
-		})(jQuery);
+			setupCinematicVideo();
+
+			$('.project-page .project-shell').each(function() {
+				if ($(this).find('.project-footer').length) return;
+				$('<footer class="project-footer"><a class="button" href="index.html">Back to Portfolio</a></footer>').appendTo(this);
+			});
+		});
+		})(jQuery);
 } catch (e) { console.error('main.js error', e); }
