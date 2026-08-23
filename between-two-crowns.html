@@ -1,117 +1,231 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Between Two Crowns | Zak Brown</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="project-page">
-		<div class="project-shell">
-			<nav class="project-nav" aria-label="Project navigation">
-				<a class="project-nav__link" href="index.html">← Back to portfolio</a>
-				<div class="project-nav__menu">
-					<a href="#overview">Overview</a>
-					<a href="#systems">Systems</a>
-					<a href="#gallery">Gallery</a>
-				</div>
-			</nav>
 
-			<header class="project-hero" style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/between-two-crowns/Castle.png');">
-				<div class="project-hero__content">
-					<p class="project-hero__eyebrow">Narrative level design / environment storytelling</p>
-					<h1>Between Two Crowns</h1>
-					<p>A narrative-driven fantasy RPG exploration game shaped around a fragile political divide, where each path reveals a different side of the same world. The brief was to blend environmental storytelling with clear traversal and a memorable sense of place.</p>
-					<div class="project-hero__meta" aria-label="Project tags">
-						<span>Environment Art</span>
-						<span>POIs</span>
-						<span>Player Choice</span>
-						<span>Level Design</span>
-						<span>Unreal Engine 5</span>
-					</div>
-				</div>
-			</header>
+<head>
+	<title>Between Two Crowns | Zak Brown</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
 
-			<section id="overview" class="project-section">
+<body class="project-page">
+	<div class="project-shell">
+		<nav class="project-nav" aria-label="Project navigation">
+			<a class="project-nav__link" href="index.html">← Back to portfolio</a>
+			<div class="project-nav__menu">
+				<a href="#overview" class="scrolly">Overview</a>
+				<a href="#gameplay" class="scrolly">Gameplay Walkthrough</a>
+				<a href="#gallery" class="scrolly">Level Flow</a>
+				<a href="#breakdown" class="scrolly">Technical Breakdown</a>
+				<a href="#level-breakdown" class="scrolly">Level Breakdown</a>
+			</div>
+		</nav>
+
+		<header class="project-hero"
+			style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/between-two-crowns/Castle.png');">
+			<div class="project-hero__content">
+				<p class="project-hero__eyebrow">Environment Art — Level Design</p>
+				<h1>Between Two Crowns</h1>
+				<p>A narrative-driven fantasy environment built in Unreal Engine 5, combining environmental
+					storytelling, set dressing and composition with branching exploration and level design.</p>
+				<div class="project-hero__meta" aria-label="Project tags">
+					<span>Unreal Engine 5</span>
+					<span>Environmental Storytelling</span>
+					<span>Level Design</span>
+				</div>
+			</div>
+		</header>
+
+		<section id="overview" class="project-section">
 			<div class="project-grid">
 				<div class="project-card">
 					<h2>Overview</h2>
-						<p>The level is designed as a journey between two kingdoms that never quite agree on the same truth. The experience is curated around pacing, discovery, and emotional tension rather than pure spectacle.</p>
-						<p class="project-quote">“The most important thing was making each location feel like it belonged to a living society, even when the player only sees it for a moment.”</p>
-					</div>
+					<p>Between Two Crowns is a narrative-driven fantasy game created in Unreal Engine 5 using Kenney
+						assets, exploring morality, social division and systemic oppression through environmental
+						storytelling and player choice.
+
+						The project combines environment art, set dressing, level design and narrative design,
+						transitioning from a linear opening into an explorable world with quests, points of interest and
+						branching paths.
+
+						Environmental storytelling uses architecture, composition, props and signage to communicate the
+						world through exploration.</p>
+					<p class="project-quote">"The environment was designed to communicate the story through exploration,
+						composition and detail, allowing players to interpret the world for themselves."</p>
+				</div>
 				<div class="project-card project-card--feature">
-					<div class="project-section__header">	
+					<div class="project-section__header">
 						<h3>Key Notes</h3>
-							<ul class="project-stat-list">
-								<li><strong>Role:</strong> Level Designer &amp; Environmental Artist</li>
-								<li><strong>Focus:</strong> Narrative flow, atmosphere, composition, environmental storytelling</li>
-								<li><strong>Tools:</strong> Unreal Engine, Twine</li>
-								<li><strong>Goal:</strong> Creating a believable and interesting world through player-guided exploration, environmental storytelling and player choice.</li>
-							</ul>
+						<ul class="project-stat-list">
+							<li><strong>Role:</strong> Environment Artist, Level Designer & Narrative Designer</li>
+							<li><strong>Tools:</strong> Unreal Engine, Twine, KayKit Asset Packs</li>
+							<li><strong>Focus:</strong> Narrative flow, atmosphere, composition, environmental
+								storytelling</li>
+						</ul>
+					</div>
+				</div>
+		</section>
+
+		<section id="gameplay" class="project-section cinematic-video" data-cinematic-video="images/WIP/TestVideo.mp4">
+			<div class="project-section__header">
+				<h2>Gameplay Walkthrough</h2>
+				<p>A walkthrough of the finished experience, showcasing the environment, exploration, narrative
+					encounters and branching player choices.</p>
+			</div>
+			<video class="project-video" controls data-autoplay="true" data-volume="0.2" playsinline loop src="images/WIP/TestVideo.mp4" poster="images/WIP/TestVideo.mp4"></video>
+		</section>
+
+		<section id="gallery" class="project-section project-gallery--fullwidth">
+			<div class="project-section__header">
+				<h2>Level Flow</h2>
+				<p>A visual breakdown of the player's journey, from the linear opening sequence through the open world,
+					side quests and final choice.
+				</p>
+			</div>
+			<div class="project-gallery">
+				<img src="images/between-two-crowns/Tavern.png" alt="TheFarm" data-gallery-caption="1. The Farm"
+					data-lightbox-caption="The farm establishes the player's life under the Kingdom before the story begins." />
+				<img src="images/between-two-crowns/SkeletonFort.png" alt="TheKingdom"
+					data-gallery-caption="2. The Kingdom"
+					data-lightbox-caption="The town uses architecture and propaganda to establish the Kingdom's control." />
+				<img src="images/between-two-crowns/RuinedTown.png" alt="TheArmoury"
+					data-gallery-caption="3. The Armoury"
+					data-lightbox-caption="The armoury introduces the player's equipment and basic interactions within the world." />
+				<img src="images/between-two-crowns/Map.png" alt="Level Map" data-gallery-caption="4. The Burning Farm"
+					data-lightbox-caption="The destroyed farm introduces the central mystery surrounding the player's missing son" />
+				<img src="images/between-two-crowns/Farm.png" alt="Farm" data-gallery-caption="5. The Escape"
+					data-lightbox-caption="The player uses environmental clues and a stolen helmet to escape into the open world." />
+				<img src="images/between-two-crowns/Castle.png" alt="Castle" data-gallery-caption="6. The Tavern"
+					data-lightbox-caption="The tavern introduces the rebellion and provides an alternative perspective on the Kingdom." />
+				<img src="images/between-two-crowns/Castle.png" alt="Castle" data-gallery-caption="7. Adalard"
+					data-lightbox-caption="Adalard challenges the player's assumptions about the skeletons through an unexpected encounter." />
+				<img src="images/between-two-crowns/Castle.png" alt="Castle"
+					data-gallery-caption="8. The Skeleton Settlement"
+					data-lightbox-caption="The ruined settlement reveals the consequences of the Kingdom's actions against the skeletons." />
+				<img src="images/between-two-crowns/Castle.png" alt="Castle" data-gallery-caption="9. The Water Tower"
+					data-lightbox-caption="The Water Tower provides an optional location that rewards exploration of the open world." />
+				<img src="images/between-two-crowns/Castle.png" alt="Castle" data-gallery-caption="10. The Pumpkin Cult"
+					data-lightbox-caption="The isolated skeleton community provides a peaceful perspective on the wider conflict." />
+				<img src="images/between-two-crowns/Castle.png" alt="Castle" data-gallery-caption="11. The Mine"
+					data-lightbox-caption="The abandoned mine becomes a key exploration location within the main quest." />
+				<img src="images/between-two-crowns/Castle.png" alt="Castle" data-gallery-caption="12. The Mountain"
+					data-lightbox-caption="The mountain leads the player towards their son and the final revelation." />
+				<img src="images/between-two-crowns/Castle.png" alt="Castle" data-gallery-caption="13. The Final Choice"
+					data-lightbox-caption="The player's decision determines whether they support the Kingdom, rebellion or skeletons." />
+				<img src="images/between-two-crowns/Castle.png" alt="Castle"
+					data-gallery-caption="14. The Kingdom Ending"
+					data-lightbox-caption="Supporting the Kingdom rewards the player while revealing the consequences of their allegiance." />
+				<img src="images/between-two-crowns/Castle.png" alt="Castle"
+					data-gallery-caption="15. The Rebellion Ending"
+					data-lightbox-caption="Joining the rebellion sees the player and their son helping plan the next revolution." />
+				<img src="images/between-two-crowns/Castle.png" alt="Castle"
+					data-gallery-caption="16. The Skeleton Ending"
+					data-lightbox-caption="Siding with the skeletons leads to the destruction of the human Kingdom in an act of revenge." />
+
+			</div>
+		</section>
+
+		<section id="breakdown" class="project-section">
+			<div class="project-section__header">
+				<h2>Technical breakdown</h2>
+				<p>The environment work focused on composition, set dressing and environmental storytelling, using
+					Kenney's asset library as a production constraint while creating a cohesive and believable world.
+				</p>
+			</div>
+
+			<div class="breakdown-list">
+				<div class="breakdown-item">
+					<div><img src="images/post-apocalyptic-rome/Map Design 2.png" alt="Map Design"></div>
+					<div class="breakdown-text">
+						<h3>Environment Composition</h3>
+						<p>The main town was composed around strong visual hierarchy, using the castle as a dominant
+							landmark to establish the Kingdom's authority.
+
+							Architecture, streets and environmental silhouettes were arranged to create leading lines
+							towards key locations while maintaining readable navigation through the environment.</p>
+					</div>
 				</div>
 			</div>
-			</section>
-			
-			<section class="project-section cinematic-video" data-cinematic-video="images/WIP/TestVideo.mp4">
-				<div class="project-section__header">
-					<h2>Cinematic Video</h2>
-					<p>Real-time cinematic render of the finished prop.</p>
-				</div>
-				<video class="project-video" controls autoplay muted loop playsinline src="images/WIP/TestVideo.mp4" poster="images/WIP/TestVideo.mp4"></video>
-			</section>
 
-			<section id="gallery" class="project-section project-gallery--fullwidth">
-				<div class="project-section__header">
-			<h2>Level Flow</h2>
-			<p>High-resolution captures and environment breakdowns from across the level. Click to open full-size.</p>
-				</div>
-				<div class="project-gallery">
-			<img src="images/between-two-crowns/Tavern.png" alt="Tavern" data-gallery-caption="Gallery caption: tavern POI and social space." data-lightbox-caption="Lightbox caption: the tavern acts as a readable landmark within the level flow." />
-			<img src="images/between-two-crowns/SkeletonFort.png" alt="Skeleton Fort" data-gallery-caption="Gallery caption: skeleton fort environment." data-lightbox-caption="Lightbox caption: a hostile POI communicating the conflict through environmental detail." />
-			<img src="images/between-two-crowns/RuinedTown.png" alt="Ruined Town" data-gallery-caption="Gallery caption: ruined town and environmental storytelling." data-lightbox-caption="Lightbox caption: damaged structures and scattered props imply the history of the settlement." />
-			<img src="images/between-two-crowns/Map.png" alt="Level Map" data-gallery-caption="Gallery caption: level layout and route planning." data-lightbox-caption="Lightbox caption: the map shows the spatial structure used to plan traversal and POIs." />
-			<img src="images/between-two-crowns/Farm.png" alt="Farm" data-gallery-caption="Gallery caption: farm POI and transition space." data-lightbox-caption="Lightbox caption: a quieter space used to vary pacing and reinforce the world’s lived-in quality." />
-			<img src="images/between-two-crowns/Castle.png" alt="Castle" data-gallery-caption="Gallery caption: castle vista and compositional focal point." data-lightbox-caption="Lightbox caption: vertical hierarchy directs attention toward the castle and its authority." />
-				</div>
-			</section>
+			<div class="breakdown-list">
+				<div class="breakdown-item">
+					<div><img src="images/post-apocalyptic-rome/EnvironmentalStorytelling.png"
+							alt="Environmental Storytelling" /></div>
+					<div class="breakdown-text">
+						<h3>Set Dressing & Asset Integration</h3>
+						<p>Narrative information was embedded directly into the environment through propaganda,
+							destroyed buildings, abandoned settlements, environmental props and diegetic signage.
 
-			<section id="systems" class="project-section">
-				<div class="project-section__header">
-					<h2>Systems & structure</h2>
-					<p>The project uses a simple but flexible rhythm: open exploration, a short encounter, then a calm reveal. That keeps the experience readable while still leaving room for mood and worldbuilding.</p>
-				</div>
-				<div class="project-grid">
-					<div class="project-card">
-						<h3>How the level moves</h3>
-						<ul class="project-list">
-							<li>Players are introduced to the setting through a quiet, guided approach.</li>
-							<li>Each new space adds a piece of story through architecture and visual detail.</li>
-							<li>Sections are paced to alternate between tension, discovery, and relief.</li>
-							<li>Environmental landmarks create clear direction without feeling overly scripted.</li>
-						</ul>
-					</div>
-					<div class="project-card">
-						<h3>Visual language</h3>
-						<ul class="project-list">
-							<li>Deep contrasts and warm highlights help frame key moments.</li>
-							<li>Materials and colour work together to support the mood of each region.</li>
-							<li>Large silhouettes keep the composition readable from a distance.</li>
-							<li>Textural variation helps the world feel lived-in rather than generic.</li>
-						</ul>
+							The ruined skeleton town was deliberately designed to mirror elements of the human
+							settlement, allowing environmental similarities to challenge the player's assumptions
+							without requiring explicit exposition.
+
+						</p>
 					</div>
 				</div>
-			</section>
-		</div>
 
-	<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+				<div class="breakdown-list">
+					<div class="breakdown-item">
+						<div><img src="images/post-apocalyptic-rome/CompositionEnvironment.png"
+								alt="Composition & Environment" /></div>
+						<div class="breakdown-text">
+							<h3>Interactive World & Narrative Design</h3>
+							<p>The open world was structured around exploration, points of interest and branching
+								dialogue rather than a purely linear quest path.
 
-	</body>
+								Dialogue choices could reveal additional information, unlock quests or prevent access to
+								content, while diegetic navigation encouraged players to interpret the environment and
+								discover locations naturally.</p>
+						</div>
+					</div>
+
+					<div class="breakdown-list">
+						<div class="breakdown-item">
+							<div><img src="images/post-apocalyptic-rome/CompositionEnvironment.png"
+									alt="Composition & Environment" /></div>
+							<div class="breakdown-text">
+								<h3>Points of Interest & World Building</h3>
+								<p>Distinct points of interest were designed to give the open world its own locations,
+									stories and visual identities, from the Water Tower and travelling merchants to the
+									skeleton settlements and forest cult.
+
+									Each location uses set dressing, composition and environmental detail to establish
+									its purpose and encourage exploration, while smaller visual details provide context
+									beyond the main quest.</p>
+							</div>
+						</div>
+
+						<section id="level-breakdown" class="project-section project-gallery--fullwidth">
+							<div class="project-grid">
+								<div class="project-card">
+									<div class="project-section__header">
+										<h2>Level Breakdown</h2>
+										<p>A deeper breakdown of the project's world structure, narrative progression,
+											points of interest and environmental design decisions.</p>
+									</div>
+								</div>
+								<div class="project-card">
+									<div class="project-video-frame"><iframe width="560" height="315"
+											src="https://www.youtube.com/embed/w07ziWq7bxo?si=EEJxFmwt6UnyiXTu"
+											title="Post-Apocalyptic Rome level breakdown" frameborder="0"
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+											referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+
+					<!-- Scripts -->
+					<script src="assets/js/jquery.min.js"></script>
+					<script src="assets/js/jquery.dropotron.min.js"></script>
+					<script src="assets/js/jquery.scrolly.min.js"></script>
+					<script src="assets/js/jquery.scrollex.min.js"></script>
+					<script src="assets/js/browser.min.js"></script>
+					<script src="assets/js/breakpoints.min.js"></script>
+					<script src="assets/js/util.js"></script>
+					<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>

@@ -1,89 +1,114 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Project City | Zak Brown</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="project-page">
-		<div class="project-shell">
-			<nav class="project-nav" aria-label="Project navigation">
-				<a class="project-nav__link" href="index.html">← Back to portfolio</a>
-				<div class="project-nav__menu">
-					<a href="#overview">Overview</a>
-					<a href="#gallery">Gallery</a>
-					<a href="#contact">Contact</a>
-				</div>
-			</nav>
 
-			<header class="project-hero" style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/project-city/Main.png')">
-				<div class="project-hero__content">
-					<p class="project-hero__eyebrow">Environment Art — City</p>
-					<h1>The Office - 1970s Detective Interior</h1>
-					<p>Large-scale urban environment emphasising mood, composition and storytelling through props and lighting.</p>
-				</div>
-			</header>
+<head>
+	<title>Project City | Zak Brown</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
 
-			<section id="overview" class="project-section">
-				<div class="project-grid">
-					<div class="project-card project-card--feature">
-						<div class="project-section__header">
-							<h2>Overview</h2>
-							<p>This project focuses on architectural storytelling, material quality, and cinematic lighting. A short cinematic and several in-engine captures illustrate the project's progression.
-								The scene was built from blockout to final polish, beginning with scale-accurate layout work in Blender before being developed and lit in UE5.
-								s a narrative-driven, game-ready interior environment created in Unreal Engine 5, based on concept art by Alec Chalmers. The project was developed to address a gap in my portfolio by producing a single, fully realised environment that demonstrates both artistic direction and professional environment art workflows.
-							</p>
-						</div>
-						<p class="project-quote">"The final result is a polished, walkable environment that demonstrates my ability to combine technical efficiency with narrative-driven environment design."</p>
+<body class="project-page">
+	<div class="project-shell">
+		<nav class="project-nav" aria-label="Project navigation">
+			<a class="project-nav__link" href="index.html">← Back to portfolio</a>
+			<div class="project-nav__menu">
+				<a href="#overview" class="scrolly">Overview</a>
+				<a href="#cinematic-video" class="scrolly">Cinematic Video</a>
+				<a href="#gallery" class="scrolly">Gallery</a>
+				<a href="#breakdown" class="scrolly">Technical Breakdown</a>
+			</div>
+		</nav>
+
+		<header class="project-hero"
+			style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/project-city/Main.png')">
+			<div class="project-hero__content">
+				<p class="project-hero__eyebrow">Environment Art — Unreal Engine 5</p>
+				<h1>The Office - 1970s Detective Interior</h1>
+				<p>A 1970s detective office environment focused on environmental storytelling, modular construction,
+					realistic props and cinematic lighting.</p>
+
+				<div class="project-hero__meta" aria-label="Project tags">
+					<span>Unreal Engine 5</span>
+					<span>Environment Art</span>
+					<span>Cinematic Lighting</span>
+				</div>
+			</div>
+		</header>
+
+		<section id="overview" class="project-section">
+			<div class="project-grid">
+				<div class="project-card project-card--feature">
+					<div class="project-section__header">
+						<h2>Overview</h2>
+						<p>This project explores how environment art, composition and lighting can communicate narrative
+							without relying on explicit dialogue or exposition.
+
+							Starting from concept art by Alec Chalmers, I developed the environment from blockout
+							through to final presentation in Unreal Engine 5. I created the environment and props in
+							Blender, textured assets in Substance Painter, then assembled, dressed and lit the scene in
+							Unreal Engine 5.</p>
 					</div>
-					<aside class="project-card">
-						<h3>Key Details</h3>
-						<ul class="project-stat-list">
-							<li><strong>Role:</strong> Environment Artist</li>
-							<li><strong>Tools:</strong> Unreal Engine, Substance Painter, Blender</li>
-							<li><strong>Assets:</strong> All assets were created by myself, with a focus on modular sets, bespoke props, and real-time optimisation.</li>
-						</ul>
-					</aside>
+					<p class="project-quote">"The project demonstrate my approach to environment art through asset
+						creation, environmental storytelling and real-time presentation."</p>
 				</div>
-			</section>
+				<aside class="project-card">
+					<h3>Key Details</h3>
+					<ul class="project-stat-list">
+						<li><strong>Role:</strong> Environment Artist</li>
+						<li><strong>Tools:</strong> Unreal Engine 5, Blender, Substance Painter</li>
+						<li><strong>Assets:</strong> All assets were created by myself</li>
+						<li><strong>Focus:</strong> Modular environments, prop creation, trim sheets, vertex painting,
+							set dressing and lighting</li>
+					</ul>
+				</aside>
+			</div>
+		</section>
 
-			<section class="project-section cinematic-video" data-cinematic-video="images/project-city/CinematicVideo.mp4">
-				<div class="project-section__header">
-					<h2>Cinematic Video</h2>
-					<p>Project cinematic presentation.</p>
-				</div>
-				<video class="project-video" controls autoplay muted loop playsinline src="images/project-city/CinematicVideo.mp4"></video>
-			</section>
+		<section id="cinematic-video" class="project-section cinematic-video"
+			data-cinematic-video="images/project-city/CinematicVideo.mp4">
+			<div class="project-section__header">
+				<h2>Cinematic Video</h2>
+				<p>A cinematic walkthrough showcasing the final environment, composition and lighting.</p>
+			</div>
+			<video class="project-video" controls data-autoplay="true" data-volume="0.2" playsinline loop src="images/project-city/CinematicVideo.mp4"></video>
+		</section>
 
-			<section id="gallery" class="project-section project-gallery--fullwidth">
-				<div class="project-section__header">
-					<h2>Gallery</h2>
-					<p>Renders, in-engine captures and cinematic excerpts.</p>
-				</div>
-				<div class="project-gallery">
-					<img src="images/project-city/Main.png" alt="Main" />
-					<img src="images/project-city/TapeRecorderDesk.jpeg" alt="TapeRecorderDesk" />
-					<img src="images/project-city/LowShot.jpeg" alt="LowShot" />
-					<img src="images/project-city/RecordPlayer.jpeg" alt="RecordPlayerProp" />
-					<img src="images/project-city/GodRays.jpeg" alt="GodRays" />
-					<img src="images/project-city/Gun.png" alt="Gun" />
-					<img src="images/project-city/Tape.png" alt="TapeRecorder" />
-				</div>
-			</section>
+		<section id="gallery" class="project-section project-gallery--fullwidth">
+			<div class="project-section__header">
+				<h2>Gallery</h2>
+				<p>Renders and in-engine captures showcasing the environment, props and lighting.</p>
+			</div>
+			<div class="project-gallery">
+				<img src="images/project-city/Main.png" alt="Main" />
+				<img src="images/project-city/TapeRecorderDesk.jpeg" alt="TapeRecorderDesk" />
+				<img src="images/project-city/LowShot.jpeg" alt="LowShot" />
+				<img src="images/project-city/RecordPlayer.jpeg" alt="RecordPlayerProp" />
+				<img src="images/project-city/GodRays.jpeg" alt="GodRays" />
+				<img src="images/project-city/Gun.png" alt="Gun" />
+				<img src="images/project-city/Tape.png" alt="TapeRecorder" />
+			</div>
+		</section>
 
 		<section id="breakdown" class="project-section">
 			<div class="project-section__header">
 				<h2>Technical breakdown</h2>
-				<p>Technical notes, shader work, cinematics and asset pipeline details.</p>
+				<p>Technical breakdowns covering modular workflows, vertex painting, materials and lighting and
+					optimisation.</p>
 			</div>
 
 			<div class="breakdown-list">
 				<div class="breakdown-item">
 					<div><img src="images/project-city/Values.jpeg" alt="Values"></div>
 					<div class="breakdown-text">
-						<h3>Values</h3>
-						<p>Lighting and atmosphere were treated as key storytelling tools. High-contrast lighting, volumetric effects, fog, and post-processing were used to establish mood and guide the viewer’s eye through the environment. The scene supports a first-person walkthrough and incorporates spatial audio, including ambient city noise, mechanical sounds, and subtle environmental effects, to enhance immersion and realism.</p>
+						<h3>Lighting & Atmosphere</h3>
+						<p>Lighting was used as a primary storytelling and composition tool. High-contrast lighting,
+							volumetric effects and post-processing were combined to establish the noir-inspired
+							atmosphere and direct attention towards key areas of the scene.
+
+							The environment was also built as a first-person walkthrough, with spatial audio used to
+							support the sense of place through ambient city noise, mechanical sounds and subtle
+							environmental effects.</p>
 					</div>
 				</div>
 			</div>
@@ -92,56 +117,75 @@
 				<div class="breakdown-item">
 					<div><img src="images/project-city/RenderWithMaps.png" alt="RenderWithMaps" /></div>
 					<div class="breakdown-text">
-						<h3>Materials & maps</h3>
-						<p>Used packed textures and custom material instances to reduce draw calls. Detail on UV packing and mask usage can be added here.</p>
+						<h3>Hero Prop</h3>
+						<p>The tape recorder was developed as a hero prop and focal point within the environment. The
+							asset uses efficiently laid-out UVs and packed texture maps to maximise texture space while
+							maintaining detailed close-up presentation.</p>
 					</div>
-			</div>
+				</div>
 
-			<div class="breakdown-list">
-				<div class="breakdown-item">
-					<div><img src="images/project-city/VertexPainting.png" alt="VertexPaint" /></div>
-					<div class="breakdown-text">
-						<h3>Vertex Painting & Trim Sheets</h3>
-						<p>Modular construction and trim sheets were used extensively for walls and architectural elements, allowing efficient asset reuse while maintaining visual variety. Vertex painting and decals were applied to break repetition and introduce material wear, grime, and age consistent with a noir-inspired 1970s New York setting.</p>
+				<div class="breakdown-list">
+					<div class="breakdown-item">
+						<div><img src="images/project-city/VertexPainting.png" alt="VertexPaint" /></div>
+						<div class="breakdown-text">
+							<h3>Vertex Painting & Trim Sheets</h3>
+							<p>Trim sheets were used across the architectural elements to create reusable materials and
+								maintain consistency across the environment. Vertex painting was used to create exposed
+								brickwork, adding variation and surface detail to the walls without requiring unique
+								textures for every asset.
+
+								Decals were also used to break up repetition and add additional surface detail, helping
+								reinforce the aged 1970s setting.</p>
+						</div>
 					</div>
-			</div>
 
-			<div class="breakdown-list">
-				<div class="breakdown-item">
-					<div><img src="images/project-city/TapeRecorderDesk.jpeg" alt="SetDressing" /></div>
-					<div class="breakdown-text">
-						<h3>Set Dressing</h3>
-						<p>A strong emphasis was placed on environmental storytelling. Props such as paperwork, photographs, weapons, and office clutter were deliberately placed to imply an active murder investigation and suggest character behaviour without explicit narrative prompts. A central hero object was designed to act as a focal point for both composition and story, reinforcing the psychological tone of the space.</p>
-					</div>
-			</div>
+					<div class="breakdown-list">
+						<div class="breakdown-item">
+							<div><img src="images/project-city/TapeRecorderDesk.jpeg" alt="SetDressing" /></div>
+							<div class="breakdown-text">
+								<h3>Set Dressing & Environmental Storytelling</h3>
+								<p>The environment was designed to imply a narrative through its props and composition.
+									Paperwork, photographs, weapons and general office clutter were deliberately
+									arranged to suggest an active murder investigation and the behaviour of the
+									occupant.
 
-			<div class="breakdown-list">
-				<div class="breakdown-item">
-					<div><img src="images/project-city/Assets_With.jpeg" alt="AssetShowcase" /></div>
-					<div class="breakdown-text">
-						<h3>Modular Asset Showcase</h3>
-						<p>A strong emphasis was placed on environmental storytelling. Props such as paperwork, photographs, weapons, and office clutter were deliberately placed to imply an active murder investigation and suggest character behaviour without explicit narrative prompts. A central hero object was designed to act as a focal point for both composition and story, reinforcing the psychological tone of the space.</p>
-					</div>
-			</div>
+									The placement of the hero props also creates visual focal points, helping guide the
+									viewer through the scene while reinforcing the narrative.</p>
+							</div>
+						</div>
 
-			<div class="breakdown-list">
-				<div class="breakdown-item">
-					<div><video autoplay muted loop playsinline src="images/project-city/Progress.mp4" alt="ProgressVideo"></div>
-					<div class="breakdown-text">
-						<h3>Progress Video</h3>
-						<p>A strong emphasis was placed on environmental storytelling. Props such as paperwork, photographs, weapons, and office clutter were deliberately placed to imply an active murder investigation and suggest character behaviour without explicit narrative prompts. A central hero object was designed to act as a focal point for both composition and story, reinforcing the psychological tone of the space.</p>
-					</div>
-			</div>
+						<div class="breakdown-list">
+							<div class="breakdown-item">
+								<div><img src="images/project-city/Assets_With.jpeg" alt="AssetShowcase" /></div>
+								<div class="breakdown-text">
+									<h3>Modular Asset Showcase</h3>
+									<p>The environment was constructed using modular architectural pieces alongside
+										bespoke props. This allowed assets to be reused across the scene while
+										maintaining visual variation through materials, vertex painting and set
+										dressing.</p>
+								</div>
+							</div>
 
-	<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+							<div class="breakdown-list">
+								<div class="breakdown-item">
+									<div><video class="project-video" controls data-autoplay="false" data-volume="0.2" playsinline loop src="images/project-city/Progress.mp4" alt="ProgressVideo"></video></div>
+									<div class="breakdown-text">
+										<h3>Progress Video</h3>
+										<p>A breakdown of the environment's development from initial blockout through
+											modelling, texturing, set dressing and final lighting.</p>
+									</div>
+								</div>
 
-	</body>
+								<!-- Scripts -->
+								<script src="assets/js/jquery.min.js"></script>
+								<script src="assets/js/jquery.dropotron.min.js"></script>
+								<script src="assets/js/jquery.scrolly.min.js"></script>
+								<script src="assets/js/jquery.scrollex.min.js"></script>
+								<script src="assets/js/browser.min.js"></script>
+								<script src="assets/js/breakpoints.min.js"></script>
+								<script src="assets/js/util.js"></script>
+								<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>

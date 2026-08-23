@@ -1,134 +1,210 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Please Wave Back | Zak Brown</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="project-page">
-		<div class="project-shell">
-			<nav class="project-nav" aria-label="Project navigation">
-				<a class="project-nav__link" href="index.html">← Back to portfolio</a>
-				<div class="project-nav__menu">
-					<a href="#overview">Overview</a>
-					<a href="#systems">Systems</a>
-					<a href="#gallery">Gallery</a>
-					<a href="#contact">Contact</a>
-				</div>
-			</nav>
 
-			<header class="project-hero" style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/please-wave-back/Main.png');">
-				<div class="project-hero__content">
-					<p class="project-hero__eyebrow">Narrative level design / environment storytelling</p>
-					<h1>Please Wave Back</h1>
-					<p>A vertical, story-led exploration experience shaped around a fragile political divide, where each path reveals a different side of the same world. The brief was to blend environmental storytelling with clear traversal and a memorable sense of place.</p>
-					<div class="project-hero__meta" aria-label="Project tags">
-						<span>Unreal Engine</span>
-						<span>Environment Art</span>
-						<span>Gameplay Flow</span>
+<head>
+	<title>Please Wave Back | Zak Brown</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="project-page">
+	<div class="project-shell">
+		<nav class="project-nav" aria-label="Project navigation">
+			<a class="project-nav__link" href="index.html">← Back to portfolio</a>
+			<div class="project-nav__menu">
+				<a href="#overview" class="scrolly">Overview</a>
+				<a href="#gameplay" class="scrolly">Gameplay Footage</a>
+				<a href="#gallery" class="scrolly">Gallery</a>
+				<a href="#breakdown" class="scrolly">Technical Breakdown</a>
+			</div>
+		</nav>
+
+		<header class="project-hero"
+			style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/please-wave-back/Main.png');">
+			<div class="project-hero__content">
+				<p class="project-hero__eyebrow">Environment Art — VR Horror</p>
+				<h1>Please Wave Back</h1>
+				<p>A VR horror environment focused on atmosphere, environmental storytelling and player interaction,
+					developed for Meta Quest 3.</p>
+				<div class="project-hero__meta" aria-label="Project tags">
+					<span>Unity 6</span>
+					<span>Environment Art</span>
+					<span>Interactive Design</span>
+					<span>VR</span>
+				</div>
+			</div>
+		</header>
+
+		<section id="overview" class="project-section">
+			<div class="project-grid">
+				<div class="project-card project-card--feature">
+					<div class="project-section__header">
+						<h2>Overview</h2>
+						<p>Please Wave Back is an independently developed VR horror prototype created in Unity 6 for
+							Meta Quest 3 as part of my final-year research project, awarded Best Independent Project
+							2026 at the University of Gloucestershire.
+
+							I developed the project across environment art, level design, interactive experience design,
+							lighting, VFX, audio and technical implementation. The project demonstrates my approach to
+							building atmospheric, playable environments while working within the technical constraints
+							of standalone VR.</p>
+					</div>
+					<p class="project-quote">"The project demonstrates how environment art, interaction and atmosphere
+						can work together to create a cohesive player experience."</p>
+				</div>
+				<aside class="project-card">
+					<h3>Key Notes</h3>
+					<ul class="project-stat-list">
+						<li><strong>Role:</strong> Environment Artist & Solo Developer</li>
+						<li><strong>Platform:</strong> Meta Quest 3</li>
+						<li><strong>Tools:</strong> Unity 6, Blender, Substance Designer, Substance Painter, Shader
+							Graph, SpeedTree</li>
+						<li><strong>Focus:</strong> Environment Art, Level Design, Lighting, VFX, Audio, VR Interaction
+							and Optimisation</li>
+					</ul>
+				</aside>
+			</div>
+		</section>
+
+		<section id="gameplay" class="project-section cinematic-video" data-cinematic-video="images/please-wave-back/Video.mp4">
+			<div class="project-section__header">
+				<h2>Gameplay Footage</h2>
+				<p>Gameplay footage showcasing the finished VR environment, interactions and atmospheric systems.</p>
+			</div>
+			<video class="project-video" controls data-autoplay="true" data-volume="0.2" playsinline loop src="images/please-wave-back/Video.mp4"></video>
+		</section>
+
+		<section id="gallery" class="project-section">
+			<div class="project-section__header">
+				<h2>Gallery</h2>
+				<p>These frames show the same world from different emotional angles: calm, threatening, and intimate.
+				</p>
+			</div>
+			<div class="project-gallery">
+				<img src="images/please-wave-back/Main.png" alt="Main" />
+				<img src="images/please-wave-back/Wave.png" alt="Wave" />
+				<img src="images/please-wave-back/Fear.png" alt="Fear" />
+				<img src="images/please-wave-back/Monster.png" alt="Monster" />
+				<img src="images/please-wave-back/Lightning.png" alt="Lightning" />
+				<img src="images/please-wave-back/Lunch.png" alt="Lunch" />
+				<img src="images/please-wave-back/Sign.png" alt="Sign" />
+				<img src="images/please-wave-back/Tape.png" alt="Tape Recorder" />
+			</div>
+		</section>
+
+		<section id="breakdown" class="project-section">
+			<div class="project-section__header">
+				<h2>Technical breakdown</h2>
+				<p>Technical breakdowns covering environment art, vegetation, materials, lighting and interactive
+					experience design.</p>
+			</div>
+
+			<div class="breakdown-list">
+				<div class="breakdown-item">
+					<div><img src="images/please-wave-back/PineTree.png" alt="Pine Tree" /></div>
+					<div class="breakdown-text">
+						<h3>Vegetation & Environment Art</h3>
+						<p>
+							The forest environment combines custom assets, vegetation, materials and environment
+							dressing to create a cohesive and atmospheric setting.
+
+							SpeedTree was used to create and optimise the vegetation, with LODs and billboard
+							representations used to maintain visual quality across viewing distances. Vegetation
+							placement was also used to control sightlines and frame areas of interest.
+						</p>
 					</div>
 				</div>
-			</header>
 
-			<section id="overview" class="project-section">
-				<div class="project-grid">
-					<div class="project-card project-card--feature">
-						<div class="project-section__header">
-							<h2>Overview</h2>
-							<p>The level is designed as a journey between two kingdoms that never quite agree on the same truth. The experience is curated around pacing, discovery, and emotional tension rather than pure spectacle.</p>
+				<div class="breakdown-list">
+					<div class="breakdown-item">
+						<div><img src="images/please-wave-back/Main.png" alt="Substance Designer"></div>
+						<div class="breakdown-text">
+							<h3>Materials & Surface Detail</h3>
+							<p>Custom ground materials were created in Substance Designer to introduce variation and
+								surface detail while maintaining a consistent visual style.
+
+								Materials were developed for real-time VR, balancing surface quality with texture memory
+								and performance requirements.</p>
 						</div>
-						<p class="project-quote">“The most important thing was making each location feel like it belonged to a living society, even when the player only sees it for a moment.”</p>
-					</div>
-					<aside class="project-card">
-						<h3>Key Notes</h3>
-						<ul class="project-stat-list">
-							<li><strong>Role:</strong> Level Designer & Environmental Artist</li>
-							<li><strong>Focus:</strong> Narrative flow, atmosphere, modular layout</li>
-							<li><strong>Tools:</strong> Unreal Engine, Blender, Photoshop</li>
-							<li><strong>Goal:</strong> Make every transition feel purposeful</li>
-						</ul>
-					</aside>
-				</div>
-			</section>
-
-			<section class="project-section cinematic-video" data-cinematic-video="images/please-wave-back/Video.mp4">
-				<div class="project-section__header">
-					<h2>Cinematic Video</h2>
-					<p>Project cinematic presentation.</p>
-				</div>
-				<video class="project-video" controls autoplay muted loop playsinline src="images/please-wave-back/Video.mp4"></video>
-			</section>
-
-			<section id="systems" class="project-section">
-				<div class="project-section__header">
-					<h2>Systems & structure</h2>
-					<p>The project uses a simple but flexible rhythm: open exploration, a short encounter, then a calm reveal. That keeps the experience readable while still leaving room for mood and worldbuilding.</p>
-				</div>
-				<div class="project-grid">
-					<div class="project-card">
-						<h3>How the level moves</h3>
-						<ul class="project-list">
-							<li>Players are introduced to the setting through a quiet, guided approach.</li>
-							<li>Each new space adds a piece of story through architecture and visual detail.</li>
-							<li>Sections are paced to alternate between tension, discovery, and relief.</li>
-							<li>Environmental landmarks create clear direction without feeling overly scripted.</li>
-						</ul>
-					</div>
-					<div class="project-card">
-						<h3>Visual language</h3>
-						<ul class="project-list">
-							<li>Deep contrasts and warm highlights help frame key moments.</li>
-							<li>Materials and colour work together to support the mood of each region.</li>
-							<li>Large silhouettes keep the composition readable from a distance.</li>
-							<li>Textural variation helps the world feel lived-in rather than generic.</li>
-						</ul>
 					</div>
 				</div>
-			</section>
 
-			<section id="gallery" class="project-section">
-				<div class="project-section__header">
-					<h2>Gallery</h2>
-					<p>These frames show the same world from different emotional angles: calm, threatening, and intimate.</p>
-				</div>
-				<div class="project-gallery">
-					<img src="images/please-wave-back/Main.png" alt="Main VR environment" />
-					<img src="images/please-wave-back/Wave.png" alt="VR interaction" />
-					<img src="images/please-wave-back/Fear.png" alt="Atmospheric lighting" />
-					<img src="images/please-wave-back/Monster.png" alt="VR encounter" />
-				</div>
-			</section>
+				<div class="breakdown-list">
+					<div class="breakdown-item">
+						<div><img src="images/please-wave-back/Tape.png" alt="Tape Recorder" /></div>
+						<div class="breakdown-text">
+							<h3>Props & Environmental Storytelling</h3>
+							<p>
+								Bespoke props were modelled, textured and dressed throughout the environment to
+								establish the setting and provide visual points of interest.
 
-			<section id="contact" class="project-section">
-				<div class="project-grid">
-					<div class="project-card">
-						<div class="project-section__header">
-							<h2>Next steps</h2>
-							<p>This page is intentionally easy to update. Swap out the text, replace the images, and keep the same structure for future case studies.</p>
+								Prop placement and set dressing were used to support environmental storytelling while
+								maintaining a consistent visual language across the scene.
+							</p>
 						</div>
 					</div>
-					<div class="project-card">
-						<h3>Get in touch</h3>
-						<p>Interested in collaborating on a similar project? I’m always happy to talk through level design, storytelling, and environment art.</p>
-						<ul class="project-stat-list">
-							<li><strong>Email:</strong> zakdgbrown@gmail.com</li>
-							<li><strong>Portfolio:</strong> <a href="index.html">View more work</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-		</div>
 
-	<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+					<div class="breakdown-list">
+						<div class="breakdown-item">
+							<div><img src="images/please-wave-back/Main.png" alt="Lighting" /></div>
+							<div class="breakdown-text">
+								<h3>Lighting & Atmosphere</h3>
+								<p>
+									Lighting was designed to establish mood, control visibility and direct player
+									attention throughout the environment.
 
-	</body>
+									Dynamic lighting, volumetric fog and atmospheric effects were combined to create
+									depth and controlled visibility. Lightning effects were created using Unity VFX
+									Graph and integrated with the wider environmental systems.
+								</p>
+							</div>
+						</div>
+
+						<div class="breakdown-list">
+							<div class="breakdown-item">
+								<div><img src="images/please-wave-back/Lunch.png" alt="Interactive Design" /></div>
+								<div class="breakdown-text">
+									<h3>Interactive Experience Design</h3>
+									<p>
+										The experience was designed around exploration, observation and player response,
+										using environment layout and interactive systems to control pacing and tension.
+
+										The Watcher responds directly to player behaviour, creating a clear
+										cause-and-effect relationship between player actions and the environment.
+										Sightlines, encounters and feedback were designed together to create a cohesive
+										player experience.
+									</p>
+								</div>
+							</div>
+
+							<div class="breakdown-list">
+								<div class="breakdown-item">
+									<div><img src="images/please-wave-back/Lightning.png" alt="Lightning" /></div>
+									<div class="breakdown-text">
+										<h3>VFX & Audio</h3>
+										<p>
+											Real-time VFX and spatial audio were used to make the environment feel
+											reactive and reinforce atmosphere.
+
+											Bats, lightning and environmental effects were created using Unity VFX
+											Graph, adding movement and unpredictability to the environment. Spatial
+											audio, ambient forest sounds and thunder reinforced environmental awareness
+											and complemented the visual design.
+										</p>
+									</div>
+								</div>
+
+								<!-- Scripts -->
+								<script src="assets/js/jquery.min.js"></script>
+								<script src="assets/js/jquery.dropotron.min.js"></script>
+								<script src="assets/js/jquery.scrolly.min.js"></script>
+								<script src="assets/js/jquery.scrollex.min.js"></script>
+								<script src="assets/js/browser.min.js"></script>
+								<script src="assets/js/breakpoints.min.js"></script>
+								<script src="assets/js/util.js"></script>
+								<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>

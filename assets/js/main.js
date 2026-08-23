@@ -309,104 +309,79 @@ try {
 			}
 
 			function renderLightbox() {
-				var $overlay = $('#lightbox-overlay');
-				var $content = $('#lightbox-content');
-				$content.empty();
-				var element = lightboxItems[lightboxIndex];
-				if (!element) return;
-				var $element = $(element);
-				var tag = $element.prop('tagName').toLowerCase();
-				var lightboxCaption = $element.attr('data-lightbox-caption');
-				var source = getLightboxSource($element);
-				if (tag === 'img' || source.match(/\.(png|jpe?g|webp|avif|gif|bmp|svg)$/i)) {
-					var $img = $('<img class="lightbox-media" alt="">').attr('src', source).attr('alt', $element.attr('alt') || 'Project image');
-					$img.on('click', function(e) {
-						e.preventDefault();
-						e.stopPropagation();
-						if (dragState.moved) {
-							dragState.moved = false;
-							return;
-						}
-						if (lightboxZoom > 1) {
-							lightboxZoom = 1;
-							lightboxPanX = 0;
-							lightboxPanY = 0;
-						} else {
-							lightboxZoom = 2;
-						}
-						applyLightboxZoom();
-					});
-					$img.on('pointerdown', function(e) {
-						e.preventDefault();
-						e.stopPropagation();
-						if (lightboxZoom <= 1) return;
-						dragState.active = true;
-						dragState.startX = e.clientX;
-						dragState.startY = e.clientY;
-						dragState.panX = lightboxPanX;
-						dragState.panY = lightboxPanY;
-						dragState.moved = false;
-						$img.addClass('is-dragging');
-					});
-					$img.on('pointermove', function(e) {
-						if (!dragState.active) return;
-						var dx = e.clientX - dragState.startX;
-						var dy = e.clientY - dragState.startY;
-						if (Math.abs(dx) > 1 || Math.abs(dy) > 1) dragState.moved = true;
-						lightboxPanX = dragState.panX + dx;
-						lightboxPanY = dragState.panY + dy;
-						applyLightboxZoom();
-					});
-					$img.on('pointerup pointerleave pointercancel', function() {
-						if (dragState.active) {
-							dragState.active = false;
-							$img.removeClass('is-dragging');
-						}
-					});
-					$img.on('wheel', function(e) {
-						e.preventDefault();
-						e.stopPropagation();
-						var delta = e.originalEvent.deltaY < 0 ? 0.18 : -0.18;
-						lightboxZoom = Math.max(1, Math.min(5, lightboxZoom + delta));
-						if (lightboxZoom === 1) { lightboxPanX = 0; lightboxPanY = 0; }
-						applyLightboxZoom();
-					});
-					$img.on('touchstart', function(e) {
-						if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches.length === 2) {
-							var t1 = e.originalEvent.touches[0];
-							var t2 = e.originalEvent.touches[1];
-							touchZoomDistance = Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY) || null;
-						}
-					});
-					$img.on('touchmove', function(e) {
-						if (!e.originalEvent || !e.originalEvent.touches || e.originalEvent.touches.length !== 2 || !touchZoomDistance) return;
-						e.preventDefault();
-						var t1 = e.originalEvent.touches[0];
-						var t2 = e.originalEvent.touches[1];
-						var distance = Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY) || touchZoomDistance;
-						if (distance > 0 && touchZoomDistance > 0) {
-							lightboxZoom = Math.max(1, Math.min(5, lightboxZoom * (distance / touchZoomDistance)));
-							touchZoomDistance = distance;
-							if (lightboxZoom === 1) { lightboxPanX = 0; lightboxPanY = 0; }
-							applyLightboxZoom();
-						}
-					});
-					$img.on('touchend touchcancel', function() { touchZoomDistance = null; });
-					$img.appendTo($content);
-				} else if (tag === 'video') {
-					var clone = element.clone();
-					clone.attr('controls', true).css({width:'100%', height:'auto'}).appendTo($content);
-				} else if (source.match(/\.mp4$/i)) {
-					$('<video class="lightbox-media" controls playsinline>').attr('src', source).appendTo($content);
-				} else {
-					$('<img class="lightbox-media" alt="">').attr('src', source).appendTo($content);
+			var $overlay = $('#lightbox-overlay');
+			var $content = $('#lightbox-content');
+			$content.empty();
+			var element = lightboxItems[lightboxIndex];
+			if (!element) return;
+			var $element = $(element);
+			var tag = $element.prop('tagName').toLowerCase();
+			var lightboxCaption = $element.attr('data-lightbox-caption');
+			var source = getLightboxSource($element);
+				
+			// Create a wrapper that will be transformed. The caption for images sits inside this wrapper so
+			// it remains anchored to the bottom of the media when zooming/panning (it will move with the image).
+			if (tag === 'img' || source.match(/\.(png|jpe?g|webp|avif|gif|bmp|svg)$/i)) {
+				var $frame = $('<div class="lightbox-media" style="position:relative; display:inline-block;"></div>');
+				var $inner = $('<img class="lightbox-inner" alt="">').attr('src', source).attr('alt', $element.attr('alt') || 'Project image');
+				$inner.appendTo($frame);
+				if (lightboxCaption) {
+					$('<p class="lightbox-caption-inside"></p>').text(lightboxCaption).appendTo($frame);
 				}
-				if (lightboxCaption) $('<p class="lightbox-caption"></p>').text(lightboxCaption).appendTo($content);
-				$('#lightbox-prev, #lightbox-next').toggle(lightboxItems.length > 1);
-				resetLightboxZoom();
-				$overlay.addClass('visible').attr('aria-hidden','false');
+				// Attach pointer/drag/zoom handlers to the frame so both image and caption move together
+				$frame.on('click', function(e) {
+					e.preventDefault(); e.stopPropagation();
+					if (dragState.moved) { dragState.moved = false; return; }
+					if (lightboxZoom > 1) { lightboxZoom = 1; lightboxPanX = 0; lightboxPanY = 0; }
+					else { lightboxZoom = 2; }
+					applyLightboxZoom();
+				});
+				$frame.on('pointerdown', function(e) {
+					e.preventDefault(); e.stopPropagation();
+					if (lightboxZoom <= 1) return;
+					dragState.active = true; dragState.startX = e.clientX; dragState.startY = e.clientY;
+					dragState.panX = lightboxPanX; dragState.panY = lightboxPanY; dragState.moved = false;
+					$frame.addClass('is-dragging');
+				});
+				$frame.on('pointermove', function(e) {
+					if (!dragState.active) return;
+					var dx = e.clientX - dragState.startX; var dy = e.clientY - dragState.startY;
+					if (Math.abs(dx) > 1 || Math.abs(dy) > 1) dragState.moved = true;
+					lightboxPanX = dragState.panX + dx; lightboxPanY = dragState.panY + dy; applyLightboxZoom();
+				});
+				$frame.on('pointerup pointerleave pointercancel', function() { if (dragState.active) { dragState.active = false; $frame.removeClass('is-dragging'); } });
+				$frame.on('wheel', function(e) { e.preventDefault(); e.stopPropagation(); var delta = e.originalEvent.deltaY < 0 ? 0.18 : -0.18; lightboxZoom = Math.max(1, Math.min(5, lightboxZoom + delta)); if (lightboxZoom === 1) { lightboxPanX = 0; lightboxPanY = 0; } applyLightboxZoom(); });
+				$frame.on('touchstart', function(e) { if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches.length === 2) { var t1 = e.originalEvent.touches[0]; var t2 = e.originalEvent.touches[1]; touchZoomDistance = Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY) || null; } });
+				$frame.on('touchmove', function(e) { if (!e.originalEvent || !e.originalEvent.touches || e.originalEvent.touches.length !== 2 || !touchZoomDistance) return; e.preventDefault(); var t1 = e.originalEvent.touches[0]; var t2 = e.originalEvent.touches[1]; var distance = Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY) || touchZoomDistance; if (distance > 0 && touchZoomDistance > 0) { lightboxZoom = Math.max(1, Math.min(5, lightboxZoom * (distance / touchZoomDistance))); touchZoomDistance = distance; if (lightboxZoom === 1) { lightboxPanX = 0; lightboxPanY = 0; } applyLightboxZoom(); } });
+				$frame.on('touchend touchcancel', function() { touchZoomDistance = null; });
+				$frame.appendTo($content);
+			} else if (tag === 'video') {
+				var $frame = $('<div class="lightbox-media" style="position:relative; display:inline-block;"></div>');
+				var $vid = $(element).clone();
+				$vid.attr('controls', true).css({width:'100%', height:'auto'}).appendTo($frame);
+				if (lightboxCaption) $('<p class="lightbox-caption-inside"></p>').text(lightboxCaption).appendTo($frame);
+				$frame.appendTo($content);
+			} else if (source.match(/\.mp4$/i)) {
+				var $frame = $('<div class="lightbox-media" style="position:relative; display:inline-block;"></div>');
+				$('<video controls playsinline>').attr('src', source).appendTo($frame);
+				if (lightboxCaption) $('<p class="lightbox-caption-inside"></p>').text(lightboxCaption).appendTo($frame);
+				$frame.appendTo($content);
+			} else {
+				var $frame = $('<div class="lightbox-media" style="position:relative; display:inline-block;"></div>');
+				$('<img alt="">').attr('src', source).appendTo($frame);
+				if (lightboxCaption) $('<p class="lightbox-caption-inside"></p>').text(lightboxCaption).appendTo($frame);
+				$frame.appendTo($content);
 			}
-
+				
+			// Do not duplicate caption: only add the outer caption when no inside caption exists
+			if (lightboxCaption && !$content.find('.lightbox-caption-inside').length) {
+				$('<p class="lightbox-caption"></p>').text(lightboxCaption).appendTo($content);
+			}
+				
+			$('#lightbox-prev, #lightbox-next').toggle(lightboxItems.length > 1);
+			resetLightboxZoom();
+			$overlay.addClass('visible').attr('aria-hidden','false');
+						}
 			function openLightbox(element) {
 				var $element = $(element);
 				var $gallery = $element.closest('.project-gallery');
@@ -456,6 +431,43 @@ try {
 				if ($('#lightbox-overlay').hasClass('visible') && e.key === 'ArrowRight') moveLightbox(1);
 			});
 
+			function configureProjectVideo($video) {
+				// $video is jQuery object for a <video> element. Read HTML attributes to control behaviour.
+				var el = $video.get(0);
+				if (!el) return;
+				// Read data attributes (editable from HTML)
+				var dataAutoplay = $video.attr('data-autoplay');
+				var autoplay = (typeof dataAutoplay !== 'undefined') ? (String(dataAutoplay).toLowerCase() === 'true') : true; // default true
+				var dataVolume = $video.attr('data-volume');
+				var volume = (typeof dataVolume !== 'undefined') ? Math.max(0, Math.min(1, parseFloat(dataVolume))) : 0.2;
+				// Apply base attributes
+				el.loop = true;
+				el.playsInline = true;
+				el.controls = true;
+				// Set initial volume value (may be overridden by autoplay policy)
+				try { el.volume = volume; } catch (e) { /* ignore */ }
+				// If autoplay requested, attempt to play with audio; if blocked, fallback to muted autoplay
+				if (autoplay) {
+					el.muted = false; // request audio
+					var p = el.play();
+					if (p && typeof p.then === 'function') {
+						p.then(function(){
+							// played with audio
+						}).catch(function(){
+							// Autoplay with sound blocked -> mute and try again silently
+							el.muted = true;
+							el.play().catch(function(){ /* still blocked */ });
+						});
+					}
+				} else {
+					// Do not autoplay; ensure muted state is false so user can hear when they play
+					el.muted = false;
+				}
+				// Expose attributes so markup reflects state
+				if (autoplay) $video.attr('data-autoplay', 'true'); else $video.attr('data-autoplay', 'false');
+				$video.attr('data-volume', volume);
+			}
+
 			function setupCinematicVideo() {
 				$('.project-page .project-shell').each(function() {
 					var $shell = $(this);
@@ -464,18 +476,49 @@ try {
 					if ($existing.length) {
 						var src = $existing.attr('data-cinematic-video') || $existing.find('video').attr('src');
 						if (src && !$existing.find('video').length) {
-							$('<video class="project-video" controls autoplay muted loop playsinline></video>').attr('src', src).appendTo($existing);
+							var $v = $('<video class="project-video" controls playsinline></video>').attr('src', src).appendTo($existing);
+							configureProjectVideo($v);
+						}
+						else if ($existing.find('video').length) {
+							configureProjectVideo($existing.find('video'));
 						}
 						return;
 					}
 					if (!pageVideo) return;
-					var $section = $('<section class="project-section cinematic-video" data-cinematic-video="' + pageVideo + '"><div class="project-section__header"><h2>Cinematic Video</h2><p>Project cinematic presentation.</p></div><video class="project-video" controls autoplay muted loop playsinline></video></section>');
+					var $section = $('<section class="project-section cinematic-video" data-cinematic-video="' + pageVideo + '"><div class="project-section__header"><h2>Cinematic Video</h2><p>Project cinematic presentation.</p></div><video class="project-video" controls playsinline></video></section>');
 					$section.find('video').attr('src', pageVideo);
+					// Allow page-level defaults for autoplay/volume via data attributes on the shell or body
+					var pageAutoplay = $shell.attr('data-cinematic-autoplay') || $('body').attr('data-cinematic-autoplay') || 'true';
+					var pageVolume = $shell.attr('data-cinematic-volume') || $('body').attr('data-cinematic-volume') || '0.2';
+					$section.find('video').attr('data-autoplay', pageAutoplay).attr('data-volume', pageVolume);
 					$section.insertAfter($shell.find('#overview'));
+					configureProjectVideo($section.find('video'));
 				});
 			}
 
 			setupCinematicVideo();
+
+			// Configure any existing .project-video tags that are already present in HTML
+			$('.project-video').each(function(){ configureProjectVideo($(this)); });
+
+			// Accordion for Reveal site experiences (delegated, generic: adding HTML blocks is sufficient)
+			$(document).on('click', '.reveal-accordion .reveal-header', function(e){
+				var $item = $(this).closest('.reveal-item');
+				var $body = $item.find('.reveal-body').first();
+				var isOpen = $item.hasClass('open');
+				if (isOpen) {
+					// Collapse
+					$body.css('max-height', 0);
+					$item.removeClass('open');
+					$(this).attr('aria-expanded','false');
+				} else {
+					// Expand — allow multiple open items (keeps it flexible). If you prefer single-open, close others here.
+					var sh = $body.prop('scrollHeight') || $body[0].scrollHeight;
+					$body.css('max-height', sh + 'px');
+					$item.addClass('open');
+					$(this).attr('aria-expanded','true');
+				}
+			});
 
 			$('.project-page .project-shell').each(function() {
 				if ($(this).find('.project-footer').length) return;

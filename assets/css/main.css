@@ -2306,7 +2306,16 @@ body.homepage.is-preload #header:after {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
     gap: 1.5rem;
-    align-items: start; }
+    align-items: stretch; /* ensure cards match height */ }
+  /* Ensure direct children stretch to equal height and keep internal layout consistent */
+  .project-grid > .project-card,
+  .project-grid > aside {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .project-grid .project-section__header { margin-bottom: 0.75rem; }
 
   .project-shell .project-card {
     padding: 1.4rem;
@@ -2459,6 +2468,128 @@ body.homepage.is-preload #header:after {
   /* =========================================
      LIGHTBOX
      ========================================= */
+
+  /* Re-usable external project link component (logo + link). Editable from HTML per-page. */
+  .external-link {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .external-link__anchor { display: inline-flex; gap: 0.75rem; align-items: center; text-decoration: none; color: inherit; }
+  .external-link__logo { width: 56px; height: 56px; object-fit: contain; border-radius: 0.35rem; box-shadow: var(--shadow-sm); border: 1px solid rgba(255,255,255,0.04); }
+  .external-link__meta { display: flex; flex-direction: column; }
+  .external-link__meta strong { font-size: 0.85rem; line-height: 1; }
+  .external-link__meta span { font-size: 0.9rem; color: var(--color-text-muted); }
+
+  /* Reveal page accordion (site experiences) */
+  .reveal-accordion { margin-top: 0.75rem; }
+
+  /* External link icons (circular, matches homepage hero social links) */
+  .external-link-icons {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+  }
+  .external-link-icons a {
+    display: grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+  }
+  .external-link-icons a:hover { background: #ff8f70; }
+  .external-link__logo-circle { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .external-link-icons a { display:flex; align-items:center; justify-content:center; }
+  .external-link-icons a .icon { display:block; line-height:1; font-size:1.05rem; }
+
+  /* When used inside the project hero meta row, push the icon to the far right */
+  .project-hero__meta-row { display: flex; align-items: center; gap: 0.8rem; }
+  .project-hero__meta-row .external-link-icons { margin-left: auto; }
+
+  /* Position the project-hero external icons over the bottom-right of the hero image */
+  .project-hero { position: relative; }
+  .project-hero .external-link-icons { position: absolute; right: 1.25rem; bottom: 1.25rem; z-index: 12; }
+
+  /* Caption inside the media frame (moves with the image) */
+  .lightbox-caption-inside {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+    font-size: clamp(0.76rem, 1vw, 1rem);
+    line-height: 1.45;
+    text-align: center;
+    color: rgba(255,255,255,0.95);
+    pointer-events: none;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.0);
+  }
+
+  .reveal-item { border-top: 1px solid rgba(255,255,255,0.04); }
+  .reveal-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 1rem;
+    background: transparent;
+    border: 0;
+    color: var(--color-text);
+    cursor: pointer;
+    text-align: left;
+  }
+  .reveal-header .reveal-title { font-weight: 600; }
+  .reveal-header .reveal-arrow { transition: transform 0.25s ease; color: var(--color-text-muted); font-size: 1.25rem; }
+  .reveal-item .reveal-body { overflow: hidden; max-height: 0; transition: max-height 0.32s ease; padding: 0 1rem; }
+  .reveal-item.open .reveal-arrow { transform: rotate(90deg); }
+  .reveal-item.open .reveal-body { padding-top: 1rem; padding-bottom: 1rem; }
+  .reveal-body .project-gallery { margin-top: 0; }
+
+  /* Hero-style reveal header (background image + left-to-right gradient + title overlay) */
+  .reveal-header[style] {
+    display: block;
+    border: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 110px; /* collapsed size */
+    transition: min-height 0.32s ease;
+  }
+  .reveal-item.open .reveal-header[style] { min-height: 220px; } /* expanded size */
+  .reveal-header[style] .reveal-title {
+    color: #fff;
+    font-size: clamp(1.05rem, 2.4vw, 1.5rem);
+    margin: 0 1.25rem 1rem 1.25rem;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    align-self: flex-end;
+  }
+  .reveal-header[style] .reveal-arrow {
+    color: rgba(255,255,255,0.95);
+    margin: 0 1rem 1rem 0;
+    align-self: flex-end;
+  }
+  .reveal-header[style] { display:flex; justify-content:space-between; align-items:flex-end; }
+  .reveal-header[style] .reveal-title, .reveal-header[style] .reveal-arrow { z-index: 2; }
+  .reveal-header[style]:after {
+    /* subtle left-to-right vignette to help legibility */
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0; width: 46%;
+    background: linear-gradient(90deg, rgba(2,6,17,0.56) 0%, rgba(2,6,17,0.14) 55%, rgba(2,6,17,0.0) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .reveal-overview { margin-bottom: 1rem; }
+  .reveal-cinematic { margin-bottom: 1rem; }
+  .reveal-gallery .project-gallery { margin-top: 0.75rem; }
+
+
   #lightbox-overlay {
     position: fixed;
     inset: 0;
@@ -2469,18 +2600,21 @@ body.homepage.is-preload #header:after {
     z-index: 100000;
     padding: 2rem;
     overscroll-behavior: contain;
+    /* Width of the centered content - reuse the same expression as #lightbox-content so arrows can sit just outside it */
+    --lb-width: min(92vw, 1400px);
   }
   #lightbox-overlay.visible { display: flex; }
   #lightbox-content {
     position: relative;
-    width: min(92vw, 1400px);
+    width: var(--lb-width);
     max-width: calc(100% - 5rem);
     max-height: min(88vh, 900px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0;
+    /* Reserve space at the bottom for the fixed caption so it does not overlap the media */
+    padding: 0 0 3.5rem 0;
     background: transparent;
     border: 0;
     box-shadow: none;
@@ -2505,11 +2639,13 @@ body.homepage.is-preload #header:after {
     position: relative;
     z-index: 2;
   }
-  #lightbox-content .lightbox-media.is-zoomed {
-    cursor: grab;
-  }
+  /* Remove transition while dragging to avoid 'snapping' / easing delays between pointer events */
   #lightbox-content .lightbox-media.is-dragging {
     cursor: grabbing;
+    transition: none !important;
+  }
+  #lightbox-content .lightbox-media.is-zoomed {
+    cursor: grab;
   }
   #lightbox-content .lightbox-media:hover,
   #lightbox-content .lightbox-media:focus-visible {
@@ -2546,8 +2682,12 @@ body.homepage.is-preload #header:after {
     opacity: 1;
     transform: translateY(-50%);
   }
-  #lightbox-prev { left: 0.85rem; }
-  #lightbox-next { right: 0.85rem; }
+  /* Position arrows slightly closer to the lightbox content (sit outside the image but nearer the media).
+    Use the --lb-width CSS variable on the overlay so arrows sit just outside the centered #lightbox-content.
+    Keep reasonable spacing on mobile via media queries. */
+  /* Calculate space outside centered content and nudge arrows slightly inward from that edge */
+  #lightbox-prev { left: calc((100% - var(--lb-width)) / 2 + 0.75rem); }
+  #lightbox-next { right: calc((100% - var(--lb-width)) / 2 + 0.75rem); }
 
   /* Lightbox close button */
   #lightbox-close {
@@ -2575,23 +2715,35 @@ body.homepage.is-preload #header:after {
   }
 
   /* Lightbox captions */
+  /* Caption sits below the media in normal flow so it remains fixed and does not transform with the image.
+     Using relative positioning keeps the caption on the same stacking layer as the media while ensuring it
+     does not move when the image is zoomed/panned. The overlay reserves space via #lightbox-content padding. */
   .lightbox-caption {
     position: relative;
-    z-index: 12;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    z-index: 4;
     max-width: min(90vw, 1000px);
-    margin: 0.75rem auto 0;
-    padding-top: 0.5rem;
+    margin: 0.75rem auto 0 auto;
+    padding: 0.125rem 0.5rem;
     font-size: clamp(0.76rem, 1vw, 1rem);
     line-height: 1.45;
     text-align: center;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.9);
+    pointer-events: none; /* allow clicks to pass through to controls */
+    background: transparent;
   }
   @media (max-width:840px) {
+    /* On small screens use a slightly narrower content width and ensure arrows remain within easy reach */
     #lightbox-content { width: min(94vw, 1000px); max-width: calc(100% - 2.5rem); max-height: calc(100vh - 1rem); }
+    /* Update the overlay variable so arrow calculations remain accurate on mobile */
+    #lightbox-overlay { --lb-width: min(94vw, 1000px); }
     #lightbox-content img, #lightbox-content video { max-height: calc(100vh - 7rem); }
     .lightbox-control { font-size: 2.8rem; }
-    #lightbox-prev { left: 0.35rem; }
-    #lightbox-next { right: 0.35rem; }
+    /* mobile: keep arrows within easy reach but closer to media */
+    #lightbox-prev { left: calc((100% - var(--lb-width)) / 2 + 0.5rem); }
+    #lightbox-next { right: calc((100% - var(--lb-width)) / 2 + 0.5rem); }
     .lightbox-caption { max-width: 92%; }
   }
 

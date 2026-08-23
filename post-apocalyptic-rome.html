@@ -1,109 +1,207 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Post-Apocalyptic Rome | Zak Brown</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="project-page">
-		<div class="project-shell">
-			<nav class="project-nav" aria-label="Project navigation">
-				<a class="project-nav__link" href="index.html">← Back to portfolio</a>
-				<div class="project-nav__menu">
-					<a href="#overview">Overview</a>
-					<a href="#systems">Systems</a>
-					<a href="#gallery">Gallery</a>
-					<a href="#level-breakdown">Level Breakdown</a>
-				</div>
-			</nav>
 
-			<header class="project-hero">
-				<div class="project-hero__content">
-					<p class="project-hero__eyebrow">Narrative level design / environment storytelling</p>
-					<h1>Post-Apocalyptic Rome</h1>
-					<p>This level was part of a paired action-adventure level design project set in post-apocalyptic Rome. Players explore vertical city streets, crumbling buildings, and hidden paths while uncovering the story of a father searching for his son. Using interactive elements, collectibles, and visual cues, the environment conveys narrative and worldbuilding without relying on cutscenes. Principles such as the golden ratio were applied to ensure the level is visually clear, engaging, and immersive.</p>
-					<div class="project-hero__meta" aria-label="Project tags">
-						<span>Unreal Engine 5</span>
-						<span>Level Design</span>
-						<span>Level Flow</span>
-						<span>Narrative Design</span>
-						<span>POIs</span>
-						<span>Block-Out</span>
+<head>
+	<title>Post-Apocalyptic Rome | Zak Brown</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="project-page">
+	<div class="project-shell">
+		<nav class="project-nav" aria-label="Project navigation">
+			<a class="project-nav__link" href="index.html">← Back to portfolio</a>
+			<div class="project-nav__menu">
+				<a href="#overview" class="scrolly">Overview</a>
+				<a href="#gameplay-walkthrough" class="scrolly">Gameplay Walkthrough</a>
+				<a href="#gallery" class="scrolly">Level Flow</a>
+				<a href="#breakdown" class="scrolly">Technical Breakdown</a>
+				<a href="#level-breakdown" class="scrolly">Level Breakdown</a>
+			</div>
+		</nav>
+
+		<header class="project-hero"
+			style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/post-apocalyptic-rome/CompositionEnvironment.png')">
+			<div class="project-hero__content">
+				<p class="project-hero__eyebrow">Level Design — Environmental Storytelling</p>
+				<h1>Post-Apocalyptic Rome</h1>
+				<p>A level design case study focused on environmental storytelling, player flow, stealth and composition
+					within a ruined Roman city.</p>
+				<div class="project-hero__meta" aria-label="Project tags">
+					<span>Unreal Engine 5</span>
+					<span>Level Design</span>
+					<span>Environmental Storytelling</span>
+				</div>
+			</div>
+		</header>
+
+		<section id="overview" class="project-section">
+			<div class="project-grid">
+				<div class="project-card project-card--feature">
+					<div class="project-section__header">
+						<h2>Overview</h2>
+						<p>Post-Apocalyptic Rome is a level design project developed around environmental storytelling
+							and stealth gameplay. Set within a ruined and overgrown Roman city, the level uses
+							verticality, exploration and visual composition to guide the player while communicating the
+							story through the environment.
+
+							Developed as a paired project, the focus was on Level 1, with responsibility for its layout,
+							pacing, stealth encounters, environmental storytelling and visual direction. The level was
+							iterated through playtesting to improve player flow, clarity and exploration.</p>
+					</div>
+					<p class="project-quote">"The environment was designed to communicate the story, guide the player
+						and create opportunities for exploration without relying on explicit direction."</p>
+				</div>
+				<aside class="project-card">
+					<h3>Key Notes</h3>
+					<ul class="project-stat-list">
+						<li><strong>Role:</strong> Level Designer & Narrative Designer</li>
+						<li><strong>Tools:</strong> Unreal Engine 5, Krita</li>
+						<li><strong>Focus:</strong> Level Design, Narrative Design, Environmental Storytelling,
+							Composition</li>
+					</ul>
+				</aside>
+			</div>
+		</section>
+
+		<section id="gameplay-walkthrough" class="project-section cinematic-video"
+			data-cinematic-video="images/WIP/TestVideo.mp4">
+			<div class="project-section__header">
+				<h2>Gameplay Walkthrough</h2>
+				<p>Walkthrough of the finished level, showcasing player flow, exploration, stealth encounters and
+					environmental storytelling.</p>
+			</div>
+			<video class="project-video" controls data-autoplay="true" data-volume="0.2" playsinline loop src="images/WIP/TestVideo.mp4" poster="images/WIP/TestVideo.mp4"></video>
+		</section>
+
+		<section id="gallery" class="project-section">
+			<div class="project-section__header">
+				<h2>Level Flow</h2>
+				<p>A visual walkthrough of the player experience, showing how environment layout, landmarks and
+					encounters shape progression through the level.
+				</p>
+			</div>
+			<div class="project-gallery">
+				<img src="images/post-apocalyptic-rome/MainPic.png" alt="Main environment composition"
+					data-gallery-caption="Gallery caption: tavern POI and social space."
+					data-lightbox-caption="Lightbox caption: the tavern acts as a readable landmark within the level flow." />
+				<img src="images/post-apocalyptic-rome/Map Design.png" alt="Level map and layout" />
+				<img src="images/post-apocalyptic-rome/PlaytestReady1.png" alt="Playtest-ready level" />
+				<img src="images/post-apocalyptic-rome/Lighting.png" alt="Environment lighting pass" />
+				<img src="images/post-apocalyptic-rome/Decals.png" alt="Environmental decals and set dressing" />
+			</div>
+		</section>
+
+		<section id="breakdown" class="project-section">
+			<div class="project-section__header">
+				<h2>Technical breakdown</h2>
+				<p>A closer look at the level design, environmental storytelling, composition and iterative development
+					of the environment.</p>
+			</div>
+
+			<div class="breakdown-list">
+				<div class="breakdown-item">
+					<div><img src="images/post-apocalyptic-rome/Map Design 2.png" alt="Map Design"></div>
+					<div class="breakdown-text">
+						<h3>Level Design & Player Flow</h3>
+						<p>The level was structured around a series of connected spaces, using verticality, alternate
+							routes and environmental landmarks to control progression and encourage exploration.
+
+							Early playtesting identified issues with optional routes causing players to miss key areas.
+							The layout was subsequently refined to create a clearer progression while retaining
+							opportunities for exploration.
+
+							The Colosseum was positioned as a central focal point, helping establish the overall
+							structure and direction of the level.</p>
 					</div>
 				</div>
-			</header>
+			</div>
 
-			<section id="overview" class="project-section">
-				<div class="project-grid">
-					<div class="project-card project-card--feature">
-						<div class="project-section__header">
-							<h2>Overview</h2>
-							<p>Level 1 was developed as part of a paired project for an action-adventure level design module. I created Level 1, focused on environmental storytelling and stealth gameplay, while my partner created Level 2, which emphasized combat.
+			<div class="breakdown-list">
+				<div class="breakdown-item">
+					<div><img src="images/post-apocalyptic-rome/EnvironmentalStorytelling.png"
+							alt="Environmental Storytelling" /></div>
+					<div class="breakdown-text">
+						<h3>Environmental Storytelling</h3>
+						<p>Environmental storytelling was used to communicate the narrative without relying on cutscenes
+							or constant dialogue.
 
-​
+							Ruined architecture, foliage, debris, graffiti, props and environmental details were used to
+							communicate the collapse of the city and the growing rebellion.
 
-The level is set in post-apocalyptic Rome, blending classical architecture with ruined, overgrown cityscapes. Inspiration was drawn from the Roman Forum, iconic classical structures, and games like The Last of Us, using debris, foliage, and decay to communicate a society in collapse. The goal was to immerse players in a world that tells its story through exploration, environmental cues, and interaction rather than relying solely on dialogue or cutscenes.</p>
+							Diegetic elements such as “Stay Quiet” graffiti also communicated gameplay information while
+							remaining part of the world.</p>
+					</div>
+				</div>
+
+				<div class="breakdown-list">
+					<div class="breakdown-item">
+						<div><img src="images/post-apocalyptic-rome/CompositionEnvironment.png"
+								alt="Composition & Environment" /></div>
+						<div class="breakdown-text">
+							<h3>Composition & Environment</h3>
+							<p>Composition was used to establish focal points, frame player movement and create a strong
+								visual hierarchy throughout the level.
+
+								Ruined Roman architecture was contrasted with overgrown vegetation, debris and
+								controlled lighting to create visual interest while reinforcing the setting.
+
+								Environmental elements were also positioned to naturally guide the player through
+								spaces, combining visual composition with navigation and gameplay readability.</p>
 						</div>
-						<p class="project-quote">“The most important thing was making each location feel like it belonged to a living society, even when the player only sees it for a moment.”</p>
 					</div>
-					<aside class="project-card">
-						<h3>Key Notes</h3>
-						<ul class="project-stat-list">
-							<li><strong>Role:</strong> Level Designer & Narrative Designer</li>
-							<li><strong>Focus:</strong> Narrative flow, atmosphere, POIs, Block-Out</li>
-							<li><strong>Tools:</strong> Unreal Engine 5, Krita</li>
-						</ul>
-					</aside>
-				</div>
-			</section>
 
-				<section class="project-section cinematic-video" data-cinematic-video="images/WIP/TestVideo.mp4">
-				<div class="project-section__header">
-					<h2>Cinematic Video</h2>
-					<p>Real-time cinematic render of the finished prop.</p>
-				</div>
-				<video class="project-video" controls autoplay muted loop playsinline src="images/WIP/TestVideo.mp4" poster="images/WIP/TestVideo.mp4"></video>
-			</section>
+					<div class="breakdown-list">
+						<div class="breakdown-item">
+							<div><img src="images/post-apocalyptic-rome/Vines.png" alt="Playtesting & Iteration" />
+							</div>
+							<div class="breakdown-text">
+								<h3>Playtesting & Iteration</h3>
+								<p>The level was developed through repeated playtesting and iteration. Feedback
+									identified issues with route clarity, puzzle pacing and player progression, leading
+									to changes in the level layout, environmental cues and gameplay spaces.
 
-			<section id="gallery" class="project-section">
-				<div class="project-section__header">
-					<h2>Gallery</h2>
-					<p>These frames show the same world from different emotional angles: calm, threatening, and intimate.</p>
-				</div>
-				<div class="project-gallery">
-					<img src="images/post-apocalyptic-rome/MainPic.png" alt="Main environment composition" />
-					<img src="images/post-apocalyptic-rome/Map Design.png" alt="Level map and layout" />
-					<img src="images/post-apocalyptic-rome/PlaytestReady1.png" alt="Playtest-ready level" />
-					<img src="images/post-apocalyptic-rome/Lighting.png" alt="Environment lighting pass" />
-					<img src="images/post-apocalyptic-rome/Decals.png" alt="Environmental decals and set dressing" />
-				</div>
-			</section>
+									Visual indicators such as banners, foliage and environmental landmarks were
+									introduced or repositioned to improve navigation without relying on explicit
+									instructions.
 
-			<section id="level-breakdown" class="project-section project-gallery--fullwidth">
-				<div class="project-grid">
-					<div class="project-card">
-						<div class="project-section__header">
-							<h2>Level Breakdown</h2>
-							<p>A focused breakdown of blockout, player flow, points of interest and the environmental decisions supporting gameplay.</p>
+									This iterative process helped balance exploration, stealth, narrative and player
+									readability.</p>
+							</div>
 						</div>
-					</div>
-					<div class="project-card">
-						<div class="project-video-frame"><iframe width="560" height="315" src="https://www.youtube.com/embed/w07ziWq7bxo?si=EEJxFmwt6UnyiXTu" title="Post-Apocalyptic Rome level breakdown" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-					</div>
-				</div>
-			</section>
-		</div>
 
-	<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+						<section id="level-breakdown" class="project-section project-gallery--fullwidth">
+							<div class="project-grid">
+								<div class="project-card">
+									<div class="project-section__header">
+										<h2>Level Breakdown</h2>
+										<p>A deeper breakdown of the level's blockout, player flow, points of interest
+											and environmental decisions supporting gameplay.</p>
+									</div>
+								</div>
+								<div class="project-card">
+									<div class="project-video-frame"><iframe width="560" height="315"
+											src="https://www.youtube.com/embed/w07ziWq7bxo?si=EEJxFmwt6UnyiXTu"
+											title="Post-Apocalyptic Rome level breakdown" frameborder="0"
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+											referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
 
-	</body>
+					<!-- Scripts -->
+					<script src="assets/js/jquery.min.js"></script>
+					<script src="assets/js/jquery.dropotron.min.js"></script>
+					<script src="assets/js/jquery.scrolly.min.js"></script>
+					<script src="assets/js/jquery.scrollex.min.js"></script>
+					<script src="assets/js/browser.min.js"></script>
+					<script src="assets/js/breakpoints.min.js"></script>
+					<script src="assets/js/util.js"></script>
+					<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>

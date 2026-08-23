@@ -1,86 +1,100 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Rogue Directive: Genesis | Zak Brown</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="project-page">
-		<div class="project-shell">
-			<nav class="project-nav" aria-label="Project navigation">
-				<a class="project-nav__link" href="index.html">← Back to portfolio</a>
-				<div class="project-nav__menu">
-					<a href="#overview">Overview</a>
-					<a href="#gallery">Gallery</a>
-					<a href="#contact">Contact</a>
-				</div>
-			</nav>
 
-			<header class="project-hero" style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/rogue-directive-gensis/Cinematic-01.png');">
-				<div class="project-hero__content">
-					<p class="project-hero__eyebrow">Environment Art — Sci-fi</p>
-					<h1>Rogue Directive: Genesis</h1>
-					<p>Sci-fi Biotechnology Facility environment focusing on visual quality, lighting, shaders, gameplay readability and real-time performance.</p>
-					<div class="project-hero__meta" aria-label="Project tags">
-						<span>Unity 6</span>
-						<span>Environment Art</span>
-						<span>Technical Art</span>
-						<span>Level Design</span>
+<head>
+	<title>Rogue Directive: Genesis | Zak Brown</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="project-page">
+	<div class="project-shell">
+		<nav class="project-nav" aria-label="Project navigation">
+			<a class="project-nav__link" href="index.html">← Back to portfolio</a>
+			<div class="project-nav__menu">
+				<a href="#overview" class="scrolly">Overview</a>
+				<a href="#cinematic" class="scrolly">Cinematic Video</a>
+				<a href="#gallery" class="scrolly">Gallery</a>
+				<a href="#breakdown" class="scrolly">Technical Breakdown</a>
+			</div>
+		</nav>
+
+		<header class="project-hero"
+			style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/rogue-directive-gensis/Cinematic-01.png');">
+			<div class="project-hero__content">
+				<p class="project-hero__eyebrow">Environment Art — Sci-fi</p>
+				<h1>Rogue Directive: Genesis</h1>
+				<p>Sci-fi biotechnology environments focused on modular construction, environmental storytelling,
+					lighting, shaders and real-time performance.</p>
+				<div class="project-hero__meta" aria-label="Project tags">
+					<span>Unity 6</span>
+					<span>Environment Art</span>
+					<span>Technical Art</span>
+					<span>Level Design</span>
+				</div>
+			</div>
+		</header>
+
+		<section id="overview" class="project-section">
+			<div class="project-grid">
+				<div class="project-card project-card--feature">
+					<div class="project-section__header">
+						<h2>Overview</h2>
+						<p>Rogue Directive: Genesis is a sci-fi action game developed in Unity 6 as part of my
+							final-year university project at the University of Gloucestershire, where it received the
+							Best Group Project 2026 award.
+
+							As an Environment Artist and Level Designer, I was responsible for the environment art and
+							level design of Level 2: Orbital Breach and Level 3: The Vault. I developed both
+							environments from initial blockout through to their final playable implementation, including
+							modular assets, props, materials, lighting and environment dressing.
+						</p>
 					</div>
+					<p class="project-quote">“My aim was to create environments that balance visual quality with clear
+						gameplay spaces and real-time performance.”</p>
 				</div>
-			</header>
+				<aside class="project-card">
+					<h3>Key Details</h3>
+					<ul class="project-stat-list">
+						<li><strong>Role:</strong> Environment Artist, Level Designer & Technical Artist</li>
+						<li><strong>Tools:</strong> Unity 6, Shader Graph, Blender, Substance Painter, Krita</li>
+						<li><strong>Focus:</strong> Modular environments, props, trim sheets, shaders, lighting, level
+							design and optimisation</li>
+					</ul>
+				</aside>
+			</div>
+		</section>
 
-			<section id="overview" class="project-section">
-				<div class="project-grid">
-					<div class="project-card project-card--feature">
-						<div class="project-section__header">
-							<h2>Overview</h2>
-							<p>Rogue Directive: Genesis is a sci-fi action game developed in Unity 6 as part of my final-year university project at the University of Gloucestershire, where it received the Best Group Project 2026 award.
-								As one of the project's Environment Artists, I was responsible for the environment art and level design for Level 2: Orbital Breach and Level 3: The Vault, taking these environments from initial blockout through to the final playable experience.
-							</p>
-						</div>
-						<p class="project-quote">"My aim throughout the project was to create environments that were not only visually engaging, but also functional spaces designed around the player's experience."</p>
-					</div>
-					<aside class="project-card">
-						<h3>Key Details</h3>
-						<ul class="project-stat-list">
-							<li><strong>Role:</strong> Environment Artist, Level Designer & Technical Artist</li>
-							<li><strong>Tools:</strong> Unity 6, Unity Shader Graph, Blender, Substance Painter, Krita</li>
-						</ul>
-					</aside>
-				</div>
-			</section>
+		<section id="cinematic" class="project-section cinematic-video" data-cinematic-video="images/WIP/TestVideo.mp4">
+			<div class="project-section__header">
+				<h2>Cinematic Video</h2>
+				<p>Real-time cinematic presentation of the finished environments.</p>
+			</div>
+			<video class="project-video" controls data-autoplay="true" data-volume="0.2" playsinline loop src="images/WIP/TestVideo.mp4" poster="images/WIP/TestVideo.mp4"></video>
+		</section>
 
-			<section class="project-section cinematic-video" data-cinematic-video="images/WIP/TestVideo.mp4">
-				<div class="project-section__header">
-					<h2>Cinematic Video</h2>
-					<p>Real-time cinematic render of the finished prop.</p>
-				</div>
-				<video class="project-video" controls autoplay muted loop playsinline src="images/WIP/TestVideo.mp4" poster="images/WIP/TestVideo.mp4"></video>
-			</section>
-
-			<section id="gallery" class="project-section project-gallery--fullwidth">
-				<div class="project-section__header">
-					<h2>Gallery</h2>
-					<p>Cinematic renders.</p>
-				</div>
-				<div class="project-gallery">
-					<img src="images/rogue-directive-gensis/Cinematic-01.png" alt="Cinematic 1"  />
-					<img src="images/rogue-directive-gensis/Cinematic-02.png" alt="Cinematic 2" />
-					<img src="images/rogue-directive-gensis/Cinematic-03.png" alt="Cinematic 3" />
-					<img src="images/rogue-directive-gensis/Cinematic-04.png" alt="Cinematic 4" />
-					<img src="images/rogue-directive-gensis/Cinematic-05.png" alt="Cinematic 5" />
-					<img src="images/rogue-directive-gensis/Cinematic-07.png" alt="Cinematic 6" />
-					<img src="images/rogue-directive-gensis/Cinematic-08.png" alt="Cinematic 7" />
-					<img src="images/rogue-directive-gensis/Cinematic-06.png" alt="Cinematic 8" />
-				</div>
-			</section>
+		<section id="gallery" class="project-section project-gallery--fullwidth">
+			<div class="project-section__header">
+				<h2>Gallery</h2>
+				<p>Cinematic renders and in-game captures showcasing the environments, lighting and asset work.</p>
+			</div>
+			<div class="project-gallery">
+				<img src="images/rogue-directive-gensis/Cinematic-01.png" alt="Cinematic 1" />
+				<img src="images/rogue-directive-gensis/Cinematic-02.png" alt="Cinematic 2" />
+				<img src="images/rogue-directive-gensis/Cinematic-03.png" alt="Cinematic 3" />
+				<img src="images/rogue-directive-gensis/Cinematic-04.png" alt="Cinematic 4" />
+				<img src="images/rogue-directive-gensis/Cinematic-05.png" alt="Cinematic 5" />
+				<img src="images/rogue-directive-gensis/Cinematic-07.png" alt="Cinematic 6" />
+				<img src="images/rogue-directive-gensis/Cinematic-08.png" alt="Cinematic 7" />
+				<img src="images/rogue-directive-gensis/Cinematic-06.png" alt="Cinematic 8" />
+			</div>
+		</section>
 
 		<section id="breakdown" class="project-section">
 			<div class="project-section__header">
 				<h2>Technical breakdown</h2>
-				<p>Shader experiments, lighting breakdowns and material notes.</p>
+				<p>Technical breakdowns covering modular workflows, materials, shaders, lighting and optimisation.</p>
 			</div>
 
 			<div class="breakdown-list">
@@ -88,67 +102,97 @@
 					<div><img src="images/rogue-directive-gensis/Assets.png" alt="AssetShowcase" /></div>
 					<div class="breakdown-text">
 						<h3>Modular Asset Showcase</h3>
-						<p>Overview of the modular asset kit used to construct the environments. Building around a consistent grid allowed assets to be reused across multiple spaces while maintaining visual consistency and reducing production time.</p>
-					</div>
-				</div>
+						<p>A modular asset kit was developed around a consistent grid to support reuse across multiple
+							spaces while maintaining consistent proportions and visual language.
 
-			<div class="breakdown-list">
-				<div class="breakdown-item">
-					<div class="project-video-frame"><iframe title="Bio Vegetation Vat | Sci-Fi Environment Prop" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/2a2d7d608eca488faa684d2f5947904e/embed?ui_theme=dark"></iframe></div>
-					<div class="breakdown-text">
-						<h3>Bio Vegetation Vat</h3>
-						<p>Bio Vegetation Vat designed as both an environmental storytelling piece and interactive gameplay prop, featuring a breakable glass.</p>
+							This workflow allowed environments to be constructed efficiently while providing flexibility
+							for different layouts and gameplay requirements.</p>
 					</div>
 				</div>
 
 				<div class="breakdown-list">
-				<div class="breakdown-item">
-					<div><img src="images/rogue-directive-gensis/LightingBreakdown.png" alt="Lighting breakdown" /></div>
-					<div class="breakdown-text">
-						<h3>Lighting & composition</h3>
-						<p>Top: final in-game render with baked lighting and post-processing. Bottom left: scene without post-processing. Bottom right: Unity's lighting debug view.</p>
+					<div class="breakdown-item">
+						<div class="project-video-frame"><iframe title="Bio Vegetation Vat | Sci-Fi Environment Prop"
+								frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+								allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+								execution-while-out-of-viewport execution-while-not-rendered web-share
+								src="https://sketchfab.com/models/2a2d7d608eca488faa684d2f5947904e/embed?ui_theme=dark"></iframe>
+						</div>
+						<div class="breakdown-text">
+							<h3>Bio Vegetation Vat</h3>
+							<p>A bespoke environment prop designed to support both environmental storytelling and
+								gameplay. The Bio Vegetation Vat features breakable glass and was designed to fit within
+								the wider biotechnology facility aesthetic.</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="breakdown-item">
-					<div><img src="images/rogue-directive-gensis/Trimsheet.png" alt="Lighting breakdown" /></div>
-					<div class="breakdown-text">
-						<h3>Trim Sheets</h3>
-						<p>Structural assets were created using a shared trim sheet workflow to maintain consistent texel density, improve material reuse, and optimise texture memory.</p>
-					</div>
-				</div>
+					<div class="breakdown-list">
+						<div class="breakdown-item">
+							<div><img src="images/rogue-directive-gensis/LightingBreakdown.png"
+									alt="Lighting breakdown" /></div>
+							<div class="breakdown-text">
+								<h3>Lighting & composition</h3>
+								<p>Lighting was baked in Unity and combined with post-processing to establish the final
+									visual presentation.
 
-				<div class="breakdown-item">
-					<div><img src="images/rogue-directive-gensis/HologramShader.png" alt="Hologram shader" /></div>
-					<div class="breakdown-text">
-						<h3>Hologram Shader Graph</h3>
-						<p>Custom Shader Graph hologram material featuring animated scan lines and a Fresnel effect to reinforce the futuristic aesthetic.</p>
-					</div>
-				</div>
+									The breakdown compares the final scene against the unprocessed scene and Unity's
+									lighting debug view, showing how the lighting setup contributed to the final result.
+								</p>
+							</div>
+						</div>
 
-				<div class="breakdown-list">
-				<div class="breakdown-item">
-					<div><img src="images/rogue-directive-gensis/ParralaxOcculsion.png" alt="Lighting breakdown" /></div>
-					<div class="breakdown-text">
-						<h3>Parallax Occlusion Mapping</h3>
-						<p>Custom decal shader using Parallax Occlusion Mapping to create the illusion of depth, adding surface detail while keeping wall geometry lightweight and maintaining real-time performance.</p>
-					</div>
-				</div>
+						<div class="breakdown-item">
+							<div><img src="images/rogue-directive-gensis/Trimsheet.png" alt="Lighting breakdown" />
+							</div>
+							<div class="breakdown-text">
+								<h3>Trim Sheets</h3>
+								<p>Structural assets were created using a shared trim sheet workflow to maintain
+									consistent texel density and maximise material reuse.
 
-			</div>
+									This reduced the number of unique textures required across the environment while
+									maintaining visual consistency across modular assets.</p>
+							</div>
+						</div>
+
+						<div class="breakdown-item">
+							<div><img src="images/rogue-directive-gensis/HologramShader.png" alt="Hologram shader" />
+							</div>
+							<div class="breakdown-text">
+								<h3>Hologram Shader Graph</h3>
+								<p>A custom Shader Graph material was created for the holographic displays, using
+									animated scan lines and a Fresnel effect to create a dynamic sci-fi material.</p>
+							</div>
+						</div>
+
+						<div class="breakdown-list">
+							<div class="breakdown-item">
+								<div><img src="images/rogue-directive-gensis/ParralaxOcculsion.png"
+										alt="Lighting breakdown" /></div>
+								<div class="breakdown-text">
+									<h3>Parallax Occlusion Mapping</h3>
+									<p>A custom material using Parallax Occlusion Mapping was used to create the
+										appearance of deeper surface detail without adding additional geometry.
+
+										This allowed detailed wall surfaces to be created while keeping the environment
+										lightweight and suitable for real-time rendering.</p>
+								</div>
+							</div>
+
+						</div>
 		</section>
 
-		</div>
+	</div>
 
 	<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
-	</body>
+</body>
+
 </html>

@@ -1,114 +1,154 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Carnival Ticket Booth | Zak Brown</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="project-page">
-		<div class="project-shell">
-			<nav class="project-nav" aria-label="Project navigation">
-				<a class="project-nav__link" href="index.html">← Back to portfolio</a>
-				<div class="project-nav__menu">
-					<a href="#overview">Overview</a>
-					<a href="#gallery">Gallery</a>
-				</div>
-			</nav>
 
-			<header class="project-hero" style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/props/carnival-ticket-booth/Hero.png')">
-				<div class="project-hero__content">
-					<p class="project-hero__eyebrow">Props — Breakdown</p>
-					<h1>Carnival Ticket Booth</h1>
-					<p>A game-ready 3D prop designed to capture the darker side of carnival nostalgia.</p>
-				</div>
-			</header>
+<head>
+	<title>Carnival Ticket Booth | Zak Brown</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
 
-			<section id="overview" class="project-section">
-				<div class="project-grid">
-					<div class="project-card project-card--feature">
-						<div class="project-section__header">
-							<h2>Overview</h2>
-							<p>This model was created in Blender, textured in Substance Painter, and rendered in Unreal Engine 5. Optimized for real-time use, with a focus on strong silhouette and readable details for horror-themed environments.
-								The peeling paint, chipped wood, and rusted metal details evoke the feeling of an abandoned fairground, while the blood stains and pentagram suggest a more sinister presence.
-							</p>
-						</div>
-						<p class="project-quote">"Created as a personal project piece in a single session."</p>
-					</div>
-					<aside class="project-card">
-						<h3>Key Details</h3>
-						<ul class="project-stat-list">
-							<li><strong>Role:</strong> Prop Artist</li>
-							<li><strong>Tools:</strong> Blender, Substance Painter, Unreal Engine 5</li>
-						</ul>
-					</aside>
-				</div>
-			</section>
-
-			<section class="project-section cinematic-video" data-cinematic-video="images/props/carnival-ticket-booth/CarnivalTicketBooth.mp4">
-				<div class="project-section__header">
-					<h2>Cinematic Video</h2>
-					<p>Real-time cinematic render of the finished prop.</p>
-				</div>
-				<video class="project-video" controls autoplay muted loop playsinline src="images/props/carnival-ticket-booth/CarnivalTicketBooth.mp4" poster="images/props/carnival-ticket-booth/Hero.png"></video>
-			</section>
-
-			<div class="breakdown-list">
-				<div class="breakdown-item">
-					<div><video autoplay muted loop playsinline src="images/props/carnival-ticket-booth/CarnivalTicketBooth.mp4" alt="ProgressVideo"></div>
-					<div class="breakdown-text">
-						<h3>Progress Video</h3>
-						<p>A strong emphasis was placed on environmental storytelling. Props such as paperwork, photographs, weapons, and office clutter were deliberately placed to imply an active murder investigation and suggest character behaviour without explicit narrative prompts. A central hero object was designed to act as a focal point for both composition and story, reinforcing the psychological tone of the space.</p>
-					</div>
+<body class="project-page">
+	<div class="project-shell">
+		<nav class="project-nav" aria-label="Project navigation">
+			<a class="project-nav__link" href="index.html">← Back to portfolio</a>
+			<div class="project-nav__menu">
+				<a href="#overview">Overview</a>
+				<a href="#cinematic-video">Cinematic Video</a>
+				<a href="#gallery">Gallery</a>
+				<a href="#breakdown">Technical Breakdown</a>
 			</div>
+		</nav>
+
+		<header class="project-hero"
+			style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/props/carnival-ticket-booth/Hero.png')">
+			<div class="project-hero__content">
+				<p class="project-hero__eyebrow">Prop Art — Environment</p>
+				<h1>Carnival Ticket Booth</h1>
+				<p>A game-ready environment prop created around a worn, abandoned carnival aesthetic, combining stylised
+					storytelling with production-ready modelling and texturing.</p>
+			</div>
+		</header>
+
+		<section id="overview" class="project-section">
+			<div class="project-grid">
+				<div class="project-card project-card--feature">
+					<div class="project-section__header">
+						<h2>Overview</h2>
+						<p>The Carnival Ticket Booth was created as a personal prop project, focusing on modelling,
+							material definition and environmental storytelling.
+
+							The design combines weathered timber, peeling paint, rusted metal and aged signage to
+							establish a neglected fairground aesthetic. Small details and surface damage were used to
+							give the prop a sense of history and reinforce its darker visual direction.
+
+							The finished asset was prepared for real-time presentation in Unreal Engine 5, with emphasis
+							on a strong silhouette, readable material separation and efficient texture usage.
+						</p>
+					</div>
+					<p class="project-quote">"A personal prop project completed from modelling to final real-time
+						presentation in a single session."</p>
+				</div>
+				<aside class="project-card">
+					<h3>Key Details</h3>
+					<ul class="project-stat-list">
+						<li><strong>Role:</strong> Prop Artist</li>
+						<li><strong>Tools:</strong> Blender, Substance Painter, Unreal Engine 5</li>
+						<li><strong>Focus:</strong> Modelling, Texturing, Materials, Environmental Storytelling</li>
+					</ul>
+				</aside>
+			</div>
+		</section>
+
+		<section id="cinematic-video" class="project-section cinematic-video"
+			data-cinematic-video="images/props/carnival-ticket-booth/CarnivalTicketBooth.mp4">
+			<div class="project-section__header">
+				<h2>Cinematic Video</h2>
+				<p>Real-time presentation of the finished prop in Unreal Engine 5.</p>
+			</div>
+			<video class="project-video" controls data-autoplay="true" data-volume="0.2" playsinline loop src="images/props/carnival-ticket-booth/CarnivalTicketBooth.mp4" poster="images/props/carnival-ticket-booth/Hero.png"></video>
+		</section>
 
 			<section id="gallery" class="project-section project-gallery--fullwidth">
 				<div class="project-section__header">
 					<h2>Gallery</h2>
-					<p>Hero render, supporting renders, texture screenshots and an in-engine turntable.</p>
+					<p>A selection of final renders and material breakdowns showing the finished asset and its texture
+						work.</p>
 				</div>
 				<div class="project-gallery">
-					<img src="images/props/carnival-ticket-booth/Hero.png" alt="Hero render" data-gallery-caption="Gallery caption: finished carnival ticket booth render." data-lightbox-caption="Lightbox caption: the finished prop presented in its real-time environment." />
-					<img src="images/props/carnival-ticket-booth/TextureScreenshots.png" alt="Texture breakdown" data-gallery-caption="Gallery caption: texture and material breakdown." data-lightbox-caption="Lightbox caption: material authoring and texture detail." />
+					<img src="images/props/carnival-ticket-booth/Hero.png" alt="Hero render" />
+					<img src="images/props/carnival-ticket-booth/TextureScreenshots.png" alt="Texture breakdown" />
 				</div>
-			</section>
-
-			<section id="sketchfab" class="project-section project-gallery--fullwidth">
-				<div class="project-section__header"><h2>Sketchfab</h2><p>Explore the prop in 3D.</p></div>
-				<div class="sketchfab-embed-wrapper project-video-frame">
-					<iframe title="Carnival Ticket Booth" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/34aaa083f5af487092add324ad1f473c/embed?ui_theme=dark"></iframe>
-				</div>
-				<p class="sketchfab-credit"><a href="https://sketchfab.com/3d-models/carnival-ticket-booth-34aaa083f5af487092add324ad1f473c" target="_blank" rel="nofollow">Carnival Ticket Booth</a> by <a href="https://sketchfab.com/Z-Brown" target="_blank" rel="nofollow">Z-Brown</a> on <a href="https://sketchfab.com" target="_blank" rel="nofollow">Sketchfab</a></p>
 			</section>
 
 			<section id="breakdown" class="project-section">
-			<div class="project-section__header">
-				<h2>Technical breakdown</h2>
-				<p>Shader experiments, lighting breakdowns and material notes.</p>
-			</div>
+				<div class="project-section__header">
+					<h2>Technical breakdown</h2>
+					<p>Technical breakdowns covering modelling, UVs, materials, texturing, optimisation and real-time
+						presentation.
+					</p>
+				</div>
 
-			<div class="breakdown-list">
-				<div class="breakdown-item">
-					<div><img src="images/props/carnival-ticket-booth/TextureScreenshots.png" alt="TextureBreakdown" /></div>
-					<div class="breakdown-text">
-						<h3>Materials & maps</h3>
-						<p>Used packed textures and custom material instances to reduce draw calls. Detail on UV packing and mask usage can be added here.</p>
+				<div class="breakdown-list">
+					<div class="breakdown-item">
+						<div class="project-video-frame">
+							<iframe title="Carnival Ticket Booth" frameborder="0" allowfullscreen
+								mozallowfullscreen="true" webkitallowfullscreen="true"
+								allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+								execution-while-out-of-viewport execution-while-not-rendered web-share
+								src="https://sketchfab.com/models/34aaa083f5af487092add324ad1f473c/embed?ui_theme=dark"></iframe>
+						</div>
+						<div class="breakdown-text">
+							<h3>Sketchfab</h3>
+							<p>The prop was modelled in Blender with a focus on clean topology, efficient geometry and a
+								strong silhouette. The finished asset can be inspected in 3D on Sketchfab, including the
+								wireframe and final material setup.</p>
+						</div>
 					</div>
-				</div>
-				</div>
-		</section>
+
+					<div class="breakdown-list">
+						<div class="breakdown-item">
+							<div><img src="images/props/carnival-ticket-booth/TextureScreenshots.png"
+									alt="TextureBreakdown" /></div>
+							<div class="breakdown-text">
+								<h3>UVs & Texture Efficiency</h3>
+								<p>UVs were efficiently packed into a single texture set, maximising texture space while
+									keeping the material setup lightweight for real-time use. A non-destructive
+									texturing workflow was used in Substance Painter, with layered masks and procedural
+									generators allowing wear, dirt, rust and surface variation to be adjusted without
+									permanently altering the underlying texture.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="breakdown-list">
+						<div class="breakdown-item">
+							<div><img src="images/props/carnival-ticket-booth/TextureScreenshots.png"
+									alt="TextureBreakdown" /></div>
+							<div class="breakdown-text">
+								<h3>Environmental Storytelling</h3>
+								<p>The prop was designed to communicate its history through material wear, damage and
+									surface detail, using peeling paint, rust and grime to suggest an abandoned carnival
+									environment. The pentagram introduces a subtle occult element, hinting at a darker
+									or potentially supernatural presence without explicitly explaining the narrative.
+								</p>
+							</div>
+						</div>
+					</div>
+			</section>
 
 		</div>
 
-			<!-- Scripts -->
-				<script src="assets/js/jquery.min.js"></script>
-				<script src="assets/js/jquery.dropotron.min.js"></script>
-				<script src="assets/js/jquery.scrolly.min.js"></script>
-				<script src="assets/js/jquery.scrollex.min.js"></script>
-				<script src="assets/js/browser.min.js"></script>
-				<script src="assets/js/breakpoints.min.js"></script>
-				<script src="assets/js/util.js"></script>
-				<script src="assets/js/main.js"></script>
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
-			</body>
+</body>
+
 </html>

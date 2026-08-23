@@ -1,134 +1,181 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Between Two Crowns | Zak Brown</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="project-page">
-		<div class="project-shell">
-			<nav class="project-nav" aria-label="Project navigation">
-				<a class="project-nav__link" href="index.html">← Back to portfolio</a>
-				<div class="project-nav__menu">
-					<a href="#overview">Overview</a>
-					<a href="#systems">Systems</a>
-					<a href="#gallery">Gallery</a>
-					<a href="#contact">Contact</a>
-				</div>
-			</nav>
 
-			<header class="project-hero" style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/philippines-lyra/HighresScreenshot00000.png');">
-				<div class="project-hero__content">
-					<p class="project-hero__eyebrow">Narrative level design / environment storytelling</p>
-					<h1>Between Two Crowns</h1>
-					<p>A vertical, story-led exploration experience shaped around a fragile political divide, where each path reveals a different side of the same world. The brief was to blend environmental storytelling with clear traversal and a memorable sense of place.</p>
-					<div class="project-hero__meta" aria-label="Project tags">
-						<span>Unreal Engine</span>
-						<span>Environment Art</span>
-						<span>Gameplay Flow</span>
+<head>
+	<title>Philippines Lyra Map | Zak Brown</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="project-page">
+	<div class="project-shell">
+		<nav class="project-nav" aria-label="Project navigation">
+			<a class="project-nav__link" href="index.html">← Back to portfolio</a>
+			<div class="project-nav__menu">
+				<a href="#overview" class="scrolly">Overview</a>
+				<a href="#gameplay-walkthrough" class="scrolly">Gameplay</a>
+				<a href="#gallery" class="scrolly">Gallery</a>
+				<a href="#breakdown" class="scrolly">Technical Breakdown</a>
+				<a href="#level-breakdown" class="scrolly">Level Breakdown</a>
+			</div>
+		</nav>
+
+		<header class="project-hero"
+			style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/philippines-lyra/Main.png');">
+			<div class="project-hero__content">
+				<p class="project-hero__eyebrow">Level Design — Multiplayer</p>
+				<h1>Philippines Lyra Map</h1>
+				<p>A multiplayer capture-point map developed in Unreal Engine 5 using the Lyra framework, combining
+					Philippine-inspired environments with player-focused level design.</p>
+				<div class="project-hero__meta" aria-label="Project tags">
+					<span>Unreal Engine</span>
+					<span>Level Design</span>
+					<span>Multiplayer</span>
+				</div>
+			</div>
+		</header>
+
+		<section id="overview" class="project-section">
+			<div class="project-grid">
+				<div class="project-card project-card--feature">
+					<div class="project-section__header">
+						<h2>Overview</h2>
+						<p>Philippines Lyra Map is a multiplayer capture-point level developed in Unreal Engine 5 using
+							the Lyra framework. Inspired by Philippine architecture and environments, the map combines a
+							dense town square with a contrasting coastal dockside area.
+
+							The level was developed through node mapping, whiteboxing, playtesting and refinement, with
+							a focus on player flow, verticality, cover, traversal and environmental readability.</p>
+					</div>
+					<p class="project-quote">"The level was developed through repeated playtesting, using player
+						feedback to refine flow, balance and the overall experience."</p>
+				</div>
+				<aside class="project-card">
+					<h3>Key Notes</h3>
+					<ul class="project-stat-list">
+						<li><strong>Role:</strong> Level Designer</li>
+						<li><strong>Tools:</strong> Unreal Engine 5, Lyra Framework</li>
+						<li><strong>Focus:</strong> Multiplayer Level Design, Player Flow, Gameplay Iteration</li>
+					</ul>
+				</aside>
+			</div>
+		</section>
+
+		<section id="gameplay-walkthrough" class="project-section cinematic-video"
+			data-cinematic-video="images/WIP/TestVideo.mp4">
+			<div class="project-section__header">
+				<h2>Gameplay</h2>
+				<p>Gameplay footage showcasing player flow, combat spaces, verticality, traversal and capture-point
+					layouts.</p>
+			</div>
+			<video class="project-video" controls data-autoplay="true" data-volume="0.2" playsinline loop src="images/WIP/TestVideo.mp4" poster="images/WIP/TestVideo.mp4"></video>
+		</section>
+
+		<section id="gallery" class="project-section">
+			<div class="project-section__header">
+				<h2>Gallery</h2>
+				<p>In-engine captures showcasing the map's environments, gameplay spaces, verticality and composition..
+				</p>
+			</div>
+			<div class="project-gallery">
+				<img src="images/post-apocalyptic-rome/MainPic.png" alt="Main environment composition" />
+				<img src="images/post-apocalyptic-rome/Map Design.png" alt="Level map and layout" />
+				<img src="images/post-apocalyptic-rome/PlaytestReady1.png" alt="Playtest-ready level" />
+				<img src="images/post-apocalyptic-rome/Lighting.png" alt="Environment lighting pass" />
+				<img src="images/post-apocalyptic-rome/Decals.png" alt="Environmental decals and set dressing" />
+			</div>
+		</section>
+
+		<section id="breakdown" class="project-section">
+			<div class="project-section__header">
+				<h2>Technical breakdown</h2>
+				<p>Level design, multiplayer layout, environmental composition and playtesting.</p>
+			</div>
+
+			<div class="breakdown-list">
+				<div class="breakdown-item">
+					<div><img src="images/post-apocalyptic-rome/Map Design 2.png" alt="Map Design"></div>
+					<div class="breakdown-text">
+						<h3>Map Design & Player Flow</h3>
+						<p>The map was planned through node mapping and whiteboxing, establishing capture points, routes
+							and key engagement spaces before visual development. Player flow was refined to balance
+							travel distance, engagement frequency and alternative routes between objectives.
+						</p>
 					</div>
 				</div>
-			</header>
+			</div>
 
-			<section id="overview" class="project-section">
-				<div class="project-grid">
-					<div class="project-card project-card--feature">
-						<div class="project-section__header">
-							<h2>Overview</h2>
-							<p>The level is designed as a journey between two kingdoms that never quite agree on the same truth. The experience is curated around pacing, discovery, and emotional tension rather than pure spectacle.</p>
+			<div class="breakdown-list">
+				<div class="breakdown-item">
+					<div><img src="images/post-apocalyptic-rome/EnvironmentalStorytelling.png"
+							alt="Environmental Storytelling" /></div>
+					<div class="breakdown-text">
+						<h3>Verticality, Cover & Traversal</h3>
+						<p>Layered combat spaces combine ground-level routes, balconies, rooftops and elevated
+							objectives to create varied engagement distances. Cover placement, jump pads and push pads
+							provide alternative approaches while maintaining clear sightlines and readable combat
+							spaces.</p>
+					</div>
+				</div>
+
+				<div class="breakdown-list">
+					<div class="breakdown-item">
+						<div><img src="images/post-apocalyptic-rome/CompositionEnvironment.png"
+								alt="Composition & Environment" /></div>
+						<div class="breakdown-text">
+							<h3>Environmental Composition & Storytelling</h3>
+							<p>Philippine-inspired architecture, landmarks, props and vegetation were used to establish
+								distinct areas and strengthen the map's visual identity. Environmental composition also
+								supports gameplay through recognisable landmarks, visual callouts and readable routes.
+							</p>
 						</div>
-						<p class="project-quote">“The most important thing was making each location feel like it belonged to a living society, even when the player only sees it for a moment.”</p>
 					</div>
-					<aside class="project-card">
-						<h3>Key Notes</h3>
-						<ul class="project-stat-list">
-							<li><strong>Role:</strong> Level Designer & Environmental Artist</li>
-							<li><strong>Focus:</strong> Narrative flow, atmosphere, modular layout</li>
-							<li><strong>Tools:</strong> Unreal Engine, Blender, Photoshop</li>
-							<li><strong>Goal:</strong> Make every transition feel purposeful</li>
-						</ul>
-					</aside>
-				</div>
-			</section>
 
-			<section class="project-section cinematic-video" data-cinematic-video="images/WIP/TestVideo.mp4">
-				<div class="project-section__header">
-					<h2>Cinematic Video</h2>
-					<p>Real-time cinematic render of the finished prop.</p>
-				</div>
-				<video class="project-video" controls autoplay muted loop playsinline src="images/WIP/TestVideo.mp4" poster="images/WIP/TestVideo.mp4"></video>
-			</section>
-
-			<section id="systems" class="project-section">
-				<div class="project-section__header">
-					<h2>Systems & structure</h2>
-					<p>The project uses a simple but flexible rhythm: open exploration, a short encounter, then a calm reveal. That keeps the experience readable while still leaving room for mood and worldbuilding.</p>
-				</div>
-				<div class="project-grid">
-					<div class="project-card">
-						<h3>How the level moves</h3>
-						<ul class="project-list">
-							<li>Players are introduced to the setting through a quiet, guided approach.</li>
-							<li>Each new space adds a piece of story through architecture and visual detail.</li>
-							<li>Sections are paced to alternate between tension, discovery, and relief.</li>
-							<li>Environmental landmarks create clear direction without feeling overly scripted.</li>
-						</ul>
-					</div>
-					<div class="project-card">
-						<h3>Visual language</h3>
-						<ul class="project-list">
-							<li>Deep contrasts and warm highlights help frame key moments.</li>
-							<li>Materials and colour work together to support the mood of each region.</li>
-							<li>Large silhouettes keep the composition readable from a distance.</li>
-							<li>Textural variation helps the world feel lived-in rather than generic.</li>
-						</ul>
-					</div>
-				</div>
-			</section>
-
-			<section id="gallery" class="project-section">
-				<div class="project-section__header">
-					<h2>Gallery</h2>
-					<p>These frames show the same world from different emotional angles: calm, threatening, and intimate.</p>
-				</div>
-				<div class="project-gallery">
-					<img src="images/philippines-lyra/HighresScreenshot00000.png" alt="Lyra map environment" />
-					<img src="images/philippines-lyra/1Map1.png" alt="Map layout" />
-					<img src="images/philippines-lyra/MapDesign1.png" alt="Map design" />
-					<img src="images/philippines-lyra/HighresScreenshot00001 (2).png" alt="In-engine environment" />
-				</div>
-			</section>
-
-			<section id="contact" class="project-section">
-				<div class="project-grid">
-					<div class="project-card">
-						<div class="project-section__header">
-							<h2>Next steps</h2>
-							<p>This page is intentionally easy to update. Swap out the text, replace the images, and keep the same structure for future case studies.</p>
+					<div class="breakdown-list">
+						<div class="breakdown-item">
+							<div><img src="images/post-apocalyptic-rome/Vines.png" alt="Playtesting & Iteration" />
+							</div>
+							<div class="breakdown-text">
+								<h3>Playtesting & Iteration</h3>
+								<p>The map went through three rounds of playtesting, with feedback used to identify
+									issues with spawn camping, traversal, objective positioning and map scale.
+									Subsequent iterations redesigned spawn areas, repositioned capture points and
+									introduced additional routes and verticality to improve multiplayer flow.</p>
+							</div>
 						</div>
-					</div>
-					<div class="project-card">
-						<h3>Get in touch</h3>
-						<p>Interested in collaborating on a similar project? I’m always happy to talk through level design, storytelling, and environment art.</p>
-						<ul class="project-stat-list">
-							<li><strong>Email:</strong> zakdgbrown@gmail.com</li>
-							<li><strong>Portfolio:</strong> <a href="index.html">View more work</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-		</div>
 
-	<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+						<section id="level-breakdown" class="project-section project-gallery--fullwidth">
+							<div class="project-grid">
+								<div class="project-card">
+									<div class="project-section__header">
+										<h2>Level Breakdown</h2>
+										<p>A deeper breakdown of the map's planning, whiteboxing, gameplay spaces,
+											capture points and iterative development.</p>
+									</div>
+								</div>
+								<div class="project-card">
+									<div class="project-video-frame"><iframe width="560" height="315"
+											src="https://www.youtube.com/embed/w07ziWq7bxo?si=EEJxFmwt6UnyiXTu"
+											title="Post-Apocalyptic Rome level breakdown" frameborder="0"
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+											referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
 
-	</body>
+					<!-- Scripts -->
+					<script src="assets/js/jquery.min.js"></script>
+					<script src="assets/js/jquery.dropotron.min.js"></script>
+					<script src="assets/js/jquery.scrolly.min.js"></script>
+					<script src="assets/js/jquery.scrollex.min.js"></script>
+					<script src="assets/js/browser.min.js"></script>
+					<script src="assets/js/breakpoints.min.js"></script>
+					<script src="assets/js/util.js"></script>
+					<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
