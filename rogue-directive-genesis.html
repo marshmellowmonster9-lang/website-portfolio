@@ -25,7 +25,7 @@
 			<div class="project-hero__content">
 				<p class="project-hero__eyebrow">Environment Art — Sci-fi</p>
 				<h1>Rogue Directive: Genesis</h1>
-				<p>Sci-fi biotechnology environments focused on modular construction, environmental storytelling,
+				<p>Sci-fi biotechnology environment, focused on modular construction, environmental storytelling,
 					lighting, shaders and real-time performance.</p>
 				<div class="project-hero__meta" aria-label="Project tags">
 					<span>Unity 6</span>
@@ -48,7 +48,7 @@
 							As an Environment Artist and Level Designer, I was responsible for the environment art and
 							level design of Level 2: Orbital Breach and Level 3: The Vault. I developed both
 							environments from initial blockout through to their final playable implementation, including
-							modular assets, props, materials, lighting and environment dressing.
+							modular assets, props, set dressing, lighting and post-processing.
 						</p>
 					</div>
 					<p class="project-quote">“My aim was to create environments that balance visual quality with clear
@@ -69,15 +69,15 @@
 		<section id="cinematic" class="project-section cinematic-video" data-cinematic-video="images/WIP/TestVideo.mp4">
 			<div class="project-section__header">
 				<h2>Cinematic Video</h2>
-				<p>Real-time cinematic presentation of the finished environments.</p>
+				<p>Real-time cinematic video of the finished environments including gameplay footage.</p>
 			</div>
-			<video class="project-video" controls data-autoplay="true" data-volume="0.2" playsinline loop src="images/WIP/TestVideo.mp4" poster="images/WIP/TestVideo.mp4"></video>
+			<video class="project-video" controls data-autoplay="false" data-volume="0.2" poster="images/rogue-directive-gensis/Cinematic-01.png" src="images/WIP/TestVideo.mp4"></video>
 		</section>
 
 		<section id="gallery" class="project-section project-gallery--fullwidth">
 			<div class="project-section__header">
 				<h2>Gallery</h2>
-				<p>Cinematic renders and in-game captures showcasing the environments, lighting and asset work.</p>
+				<p>Cinematic renders and in-game captures showcasing the environments.</p>
 			</div>
 			<div class="project-gallery">
 				<img src="images/rogue-directive-gensis/Cinematic-01.png" alt="Cinematic 1" />
@@ -94,7 +94,7 @@
 		<section id="breakdown" class="project-section">
 			<div class="project-section__header">
 				<h2>Technical breakdown</h2>
-				<p>Technical breakdowns covering modular workflows, materials, shaders, lighting and optimisation.</p>
+				<p>Technical breakdowns covering modular workflows, materials, shaders, lighting and optimisation techniques.</p>
 			</div>
 
 			<div class="breakdown-list">
@@ -103,7 +103,7 @@
 					<div class="breakdown-text">
 						<h3>Modular Asset Showcase</h3>
 						<p>A modular asset kit was developed around a consistent grid to support reuse across multiple
-							spaces while maintaining consistent proportions and visual language.
+							spaces while maintaining consistent proportions and visual language. <br>
 
 							This workflow allowed environments to be constructed efficiently while providing flexibility
 							for different layouts and gameplay requirements.</p>
@@ -120,9 +120,9 @@
 						</div>
 						<div class="breakdown-text">
 							<h3>Bio Vegetation Vat</h3>
-							<p>A bespoke environment prop designed to support both environmental storytelling and
+							<p>A modular environment prop designed to support both environmental storytelling and
 								gameplay. The Bio Vegetation Vat features breakable glass and was designed to fit within
-								the wider biotechnology facility aesthetic.</p>
+								the wider sci-fi biotechnology facility.</p>
 						</div>
 					</div>
 
@@ -133,10 +133,10 @@
 							<div class="breakdown-text">
 								<h3>Lighting & composition</h3>
 								<p>Lighting was baked in Unity and combined with post-processing to establish the final
-									visual presentation.
+									visual presentation.<br>
 
-									The breakdown compares the final scene against the unprocessed scene and Unity's
-									lighting debug view, showing how the lighting setup contributed to the final result.
+									This breakdown compares the final scene (top) against the unlit scene (bottom-left) and Unity's
+									lighting debug view (bottom-right), showing how the lighting setup contributed to the final result.
 								</p>
 							</div>
 						</div>
@@ -146,10 +146,10 @@
 							</div>
 							<div class="breakdown-text">
 								<h3>Trim Sheets</h3>
-								<p>Structural assets were created using a shared trim sheet workflow to maintain
-									consistent texel density and maximise material reuse.
+								<p>Wall variations were created using a shared trim sheet workflow to maintain
+									consistent texel density and maximise material reuse.<br>
 
-									This reduced the number of unique textures required across the environment while
+									This reduced the number of unique textures required across the environment, reducing draw calls while
 									maintaining visual consistency across modular assets.</p>
 							</div>
 						</div>
@@ -170,8 +170,8 @@
 										alt="Lighting breakdown" /></div>
 								<div class="breakdown-text">
 									<h3>Parallax Occlusion Mapping</h3>
-									<p>A custom material using Parallax Occlusion Mapping was used to create the
-										appearance of deeper surface detail without adding additional geometry.
+									<p>A custom decal shader using Parallax Occlusion Mapping was used to create the
+										appearance of deeper surface detail without adding additional geometry.<br>
 
 										This allowed detailed wall surfaces to be created while keeping the environment
 										lightweight and suitable for real-time rendering.</p>

@@ -24,8 +24,8 @@
 			style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/please-wave-back/Main.png');">
 			<div class="project-hero__content">
 				<p class="project-hero__eyebrow">Environment Art — VR Horror</p>
-				<h1>Please Wave Back</h1>
-				<p>A VR horror environment focused on atmosphere, environmental storytelling and player interaction,
+				<h1>Please Wave Back VR</h1>
+				<p>A VR horror experience focused on atmosphere, environmental storytelling and player interaction,
 					developed for Meta Quest 3.</p>
 				<div class="project-hero__meta" aria-label="Project tags">
 					<span>Unity 6</span>
@@ -42,10 +42,11 @@
 					<div class="project-section__header">
 						<h2>Overview</h2>
 						<p>Please Wave Back is an independently developed VR horror prototype created in Unity 6 for
-							Meta Quest 3 as part of my final-year research project, awarded Best Independent Project
-							2026 at the University of Gloucestershire.
+							Meta Quest 3 as part of my final-year dissertation, awarded Best Independent Project
+							2026 at the University of Gloucestershire.<br>
 
-							I developed the project across environment art, level design, interactive experience design,
+							I developed all aspects of the project including environment art, level design, interactive
+							experience design,
 							lighting, VFX, audio and technical implementation. The project demonstrates my approach to
 							building atmospheric, playable environments while working within the technical constraints
 							of standalone VR.</p>
@@ -61,24 +62,27 @@
 						<li><strong>Tools:</strong> Unity 6, Blender, Substance Designer, Substance Painter, Shader
 							Graph, SpeedTree</li>
 						<li><strong>Focus:</strong> Environment Art, Level Design, Lighting, VFX, Audio, VR Interaction
+							Design
 							and Optimisation</li>
 					</ul>
 				</aside>
 			</div>
 		</section>
 
-		<section id="gameplay" class="project-section cinematic-video" data-cinematic-video="images/please-wave-back/Video.mp4">
+		<section id="gameplay" class="project-section cinematic-video"
+			data-cinematic-video="images/please-wave-back/Video.mp4">
 			<div class="project-section__header">
 				<h2>Gameplay Footage</h2>
 				<p>Gameplay footage showcasing the finished VR environment, interactions and atmospheric systems.</p>
 			</div>
-			<video class="project-video" controls data-autoplay="true" data-volume="0.2" playsinline loop src="images/please-wave-back/Video.mp4"></video>
+			<video class="project-video" controls data-autoplay="true" data-volume="0.2" playsinline loop
+				src="images/please-wave-back/Video.mp4"></video>
 		</section>
 
 		<section id="gallery" class="project-section">
 			<div class="project-section__header">
 				<h2>Gallery</h2>
-				<p>These frames show the same world from different emotional angles: calm, threatening, and intimate.
+				<p>Gameplay captures showcasing the environment, interactions, and visual effects.
 				</p>
 			</div>
 			<div class="project-gallery">
@@ -96,21 +100,21 @@
 		<section id="breakdown" class="project-section">
 			<div class="project-section__header">
 				<h2>Technical breakdown</h2>
-				<p>Technical breakdowns covering environment art, vegetation, materials, lighting and interactive
+				<p>Technical breakdowns covering environment art, vegetation, lighting and interactive
 					experience design.</p>
 			</div>
 
 			<div class="breakdown-list">
 				<div class="breakdown-item">
-					<div><img src="images/please-wave-back/PineTree.png" alt="Pine Tree" /></div>
+					<div><img src="images/please-wave-back/SpeedTree.gif" alt="Pine Tree" /></div>
 					<div class="breakdown-text">
 						<h3>Vegetation & Environment Art</h3>
 						<p>
-							The forest environment combines custom assets, vegetation, materials and environment
-							dressing to create a cohesive and atmospheric setting.
+							The forest environment combines custom assets, vegetation, atlas materials and set
+							dressing to create a cohesive and atmospheric setting.<br>
 
-							SpeedTree was used to create and optimise the vegetation, with LODs and billboard
-							representations used to maintain visual quality across viewing distances. Vegetation
+							SpeedTree was used to create and optimise the tree assets, with LODs and billboard
+							techniques used to improve performance using player viewing distances. Vegetation
 							placement was also used to control sightlines and frame areas of interest.
 						</p>
 					</div>
@@ -118,7 +122,7 @@
 
 				<div class="breakdown-list">
 					<div class="breakdown-item">
-						<div><img src="images/please-wave-back/Main.png" alt="Substance Designer"></div>
+						<div><img src="images/please-wave-back/SubstanceDesigner.png" alt="Substance Designer"></div>
 						<div class="breakdown-text">
 							<h3>Materials & Surface Detail</h3>
 							<p>Custom ground materials were created in Substance Designer to introduce variation and
@@ -180,15 +184,16 @@
 
 							<div class="breakdown-list">
 								<div class="breakdown-item">
-									<div><img src="images/please-wave-back/Lightning.png" alt="Lightning" /></div>
+									<div><img src="images/please-wave-back/VFXs.gif" alt="Lightning" /></div>
 									<div class="breakdown-text">
 										<h3>VFX & Audio</h3>
 										<p>
 											Real-time VFX and spatial audio were used to make the environment feel
-											reactive and reinforce atmosphere.
+											reactive and reinforce atmosphere.<br>
 
-											Bats, lightning and environmental effects were created using Unity VFX
-											Graph, adding movement and unpredictability to the environment. Spatial
+											Bats, flies, cockroaches, fog and lightning were created using Unity VFX
+											Graph and Unity's particle system, adding motion and unpredictability to the
+											environment, trying to increase a players immersion. Spatial
 											audio, ambient forest sounds and thunder reinforced environmental awareness
 											and complemented the visual design.
 										</p>
