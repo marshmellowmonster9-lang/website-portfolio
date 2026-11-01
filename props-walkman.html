@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Walkman | Zak Brown</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="project-page">
+	<div class="project-shell">
+		<nav class="project-nav" aria-label="Project navigation">
+			<a class="project-nav__link" href="props.html">← Back to portfolio</a>
+			<div class="project-nav__menu">
+				<a href="#overview">Overview</a>
+				<a href="#cinematic-video">Cinematic Video</a>
+				<a href="#gallery">Gallery</a>
+				<a href="#breakdown">Technical Breakdown</a>
+			</div>
+		</nav>
+
+		<header class="project-hero"
+			style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/props/walkman/BeautyShotPP_01.png');">
+			<div class="project-hero__content">
+				<p class="project-hero__eyebrow">Prop Art — Environment</p>
+				<h1>Walkman & Cassettes</h1>
+				<p>A game-ready prop created for VR as a hero asset.</p>
+			</div>
+		</header>
+
+		<section id="overview" class="project-section">
+			<div class="project-grid">
+				<div class="project-card project-card--feature">
+					<div class="project-section__header">
+						<h2>Overview</h2>
+						<p>The Carnival Ticket Booth was created as a personal prop project, focusing on modelling,
+							material definition and environmental storytelling.
+
+							The design combines weathered timber, peeling paint, rusted metal and aged signage to
+							establish a neglected fairground aesthetic. Small details and surface damage were used to
+							give the prop a sense of history and reinforce its darker visual direction.
+
+							The finished asset was prepared for real-time presentation in Unreal Engine 5, with emphasis
+							on a strong silhouette, readable material separation and efficient texture usage.
+						</p>
+					</div>
+					<p class="project-quote">"A personal prop project completed from modelling to final real-time
+						presentation in a single session."</p>
+				</div>
+				<aside class="project-card">
+					<h3>Key Details</h3>
+					<ul class="project-stat-list">
+						<li><strong>Role:</strong> Prop Artist</li>
+						<li><strong>Tools:</strong> Blender, Substance Painter, Unity 6</li>
+						<li><strong>Focus:</strong> Modelling, Texturing, Materials, Environmental Storytelling</li>
+					</ul>
+				</aside>
+			</div>
+		</section>
+
+		<section id="cinematic-video" class="project-section cinematic-video"
+			data-cinematic-video="images/props/walkman/Walkman.mp4">
+			<div class="project-section__header">
+				<h2>Cinematic Video</h2>
+				<p>Rendered presentation of the finished prop in Blender.</p>
+			</div>
+			<video class="project-video" controls data-autoplay="true" data-volume="0.2" playsinline loop
+				src="images/props/walkman/Walkman.mp4"
+				poster="images/props/walkman/BeautyShot_PostProcessing.png"></video>
+		</section>
+
+		<section id="gallery" class="project-section project-gallery--fullwidth">
+			<div class="project-section__header">
+				<h2>Gallery</h2>
+				<p>A selection of final renders and material breakdowns showing the finished asset and its texture
+					work.</p>
+			</div>
+			<div class="project-gallery">
+				<img src="images/props/walkman/BeautyShotPP_01.png" alt="Beauty Shot 01" />
+				<img src="images/props/walkman/BeautyShotPP_02.png" alt="Beauty Shot 02" />
+				<img src="images/props/walkman/BeautyShotPP_03.png" alt="Beauty Shot 03" />
+				<img src="images/props/walkman/BeautyShotPP_04.png" alt="Beauty Shot 04" />
+			</div>
+		</section>
+
+		<section id="breakdown" class="project-section">
+			<div class="project-section__header">
+				<h2>Technical breakdown</h2>
+				<p>Technical breakdowns covering modelling, UVs, materials, texturing, optimisation and real-time
+					presentation.
+				</p>
+			</div>
+
+			<!-- <div class="breakdown-list">
+					<div class="breakdown-item">
+						<div class="project-video-frame"><iframe title="Bio Vegetation Vat | Sci-Fi Environment Prop"
+								frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+								allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+								execution-while-out-of-viewport execution-while-not-rendered web-share
+								src="https://sketchfab.com/models/2a2d7d608eca488faa684d2f5947904e/embed?ui_theme=dark"></iframe>
+						</div>
+						<div class="breakdown-text">
+							<h3>Sketchfab</h3>
+							<p>The prop was modelled in Blender with a focus on clean topology, efficient geometry and a
+								strong silhouette. The finished asset can be inspected in 3D on Sketchfab, including the
+								wireframe and final material setup.</p>
+						</div>
+					</div> -->
+
+			<div class="breakdown-list">
+				<div class="breakdown-item">
+					<div><img src="images\props\walkman\Beauty_Wireframe.png" alt="Wireframe" /></div>
+					<div class="breakdown-text">
+						<h3>Wireframe</h3>
+						<p>UVs were efficiently packed into a single texture set, maximising texture space while
+							keeping the material setup lightweight for real-time use. A non-destructive
+							texturing workflow was used in Substance Painter, with layered masks and procedural
+							generators allowing wear, dirt, rust and surface variation to be adjusted without
+							permanently altering the underlying texture.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- <div class="breakdown-list">
+						<div class="breakdown-item">
+							<div><img src="images\props\radio\GameRender.png"
+									alt="Game Render" /></div>
+							<div class="breakdown-text">
+								<h3>Game Render</h3>
+								<p>UVs were efficiently packed into a single texture set, maximising texture space while
+									keeping the material setup lightweight for real-time use. A non-destructive
+									texturing workflow was used in Substance Painter, with layered masks and procedural
+									generators allowing wear, dirt, rust and surface variation to be adjusted without
+									permanently altering the underlying texture.</p>
+							</div>
+						</div>
+					</div> -->
+
+			<div class="breakdown-list">
+				<div class="breakdown-item">
+					<div><img src="images\props\walkman\WalkmanFlats.png" alt="TextureBreakdown" /></div>
+					<div class="breakdown-text">
+						<h3>Walkman Texture Sets</h3>
+						<p>The prop was designed to communicate its history through material wear, damage and
+							surface detail, using peeling paint, rust and grime to suggest an abandoned carnival
+							environment. The pentagram introduces a subtle occult element, hinting at a darker
+							or potentially supernatural presence without explicitly explaining the narrative.
+						</p>
+					</div>
+				</div>
+
+				<div class="breakdown-list">
+					<div class="breakdown-item">
+						<div><img src="images\props\walkman\CassettesFlats.png" alt="TextureBreakdown" /></div>
+						<div class="breakdown-text">
+							<h3>Cassette Texture Sets</h3>
+							<p>The prop was designed to communicate its history through material wear, damage and
+								surface detail, using peeling paint, rust and grime to suggest an abandoned carnival
+								environment. The pentagram introduces a subtle occult element, hinting at a darker
+								or potentially supernatural presence without explicitly explaining the narrative.
+							</p>
+						</div>
+					</div>
+
+				</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
