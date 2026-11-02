@@ -2119,7 +2119,11 @@ body.homepage.is-preload #header:after {
   .portfolio-showcase__intro {
     max-width: 760px;
     margin: 0 auto 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center; }
+    .portfolio-showcase__intro h2 { width: 100%; text-align: center; }
     .portfolio-showcase__intro h2 {
       font-size: 2.1em;
       letter-spacing: 0.18em;
@@ -2821,6 +2825,14 @@ body.homepage.is-preload #header:after {
     aspect-ratio: 16 / 9;
     max-height: none;
     object-fit: cover;
+  }
+  #cinematic-video > .reveal-trailer-video {
+    width: min(100%, 720px, calc(78vh * 9 / 16));
+    max-width: 100%;
+    height: auto;
+    max-height: 78vh;
+    aspect-ratio: 9 / 16;
+    object-fit: contain;
   }
   .project-image-carousel {
     width: 100%;
