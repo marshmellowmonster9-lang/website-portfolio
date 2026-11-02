@@ -1458,6 +1458,10 @@ body.homepage.is-preload #header:after {
   border-radius: var(--radius-md);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); }
 
+#showreel > header h2 {
+  text-align: center;
+}
+
 #footer {
   background: #06080d;
   border-top: 1px solid rgba(255, 255, 255, 0.08); }
@@ -2826,12 +2830,7 @@ body.homepage.is-preload #header:after {
     max-height: none;
     object-fit: cover;
   }
-  #cinematic-video > .reveal-trailer-video {
-    width: min(100%, 720px, calc(78vh * 9 / 16));
-    max-width: 100%;
-    height: auto;
-    max-height: 78vh;
-    aspect-ratio: 9 / 16;
+  .project-video-frame > .reveal-trailer-video {
     object-fit: contain;
   }
   .project-image-carousel {
