@@ -14,8 +14,7 @@
 			<a class="project-nav__link" href="props.html">← Back to portfolio</a>
 			<div class="project-nav__menu">
 				<a href="#overview">Overview</a>
-				<a href="#cinematic-video">Cinematic Video</a>
-				<a href="#gallery">Gallery</a>
+				<a href="#media">Media</a>
 				<a href="#breakdown">Technical Breakdown</a>
 			</div>
 		</nav>
@@ -25,7 +24,7 @@
 			<div class="project-hero__content">
 				<p class="project-hero__eyebrow">Prop Art — Environment</p>
 				<h1>Walkman & Cassettes</h1>
-				<p>A game-ready prop created for VR as a hero asset.</p>
+				<p>VR-ready props created for Please Wave Back, designed for clear close-range viewing on Meta Quest 3.</p>
 			</div>
 		</header>
 
@@ -34,32 +33,29 @@
 				<div class="project-card project-card--feature">
 					<div class="project-section__header">
 						<h2>Overview</h2>
-						<p>The Carnival Ticket Booth was created as a personal prop project, focusing on modelling,
-							material definition and environmental storytelling.
-
-							The design combines weathered timber, peeling paint, rusted metal and aged signage to
-							establish a neglected fairground aesthetic. Small details and surface damage were used to
-							give the prop a sense of history and reinforce its darker visual direction.
-
-							The finished asset was prepared for real-time presentation in Unreal Engine 5, with emphasis
-							on a strong silhouette, readable material separation and efficient texture usage.
+						<p>Created for Please Wave Back VR, the Walkman and Cassette props were built for close headset
+							viewing while remaining suitable for a real-time VR project. The Walkman uses its own
+							texture set; the cassette texture places eight cassette designs on one material. This increases efficiency, batching and UV packing, while still trying to preserve variety across the props.
 						</p>
 					</div>
-					<p class="project-quote">"A personal prop project completed from modelling to final real-time
-						presentation in a single session."</p>
+					<p class="project-quote">"Separate Walkman and cassette texture sets keep the asset setup clear,
+						while one shared cassette material supports eight distinct designs."</p>
 				</div>
 				<aside class="project-card">
 					<h3>Key Details</h3>
 					<ul class="project-stat-list">
 						<li><strong>Role:</strong> Prop Artist</li>
+						<li><strong>Project:</strong> Please Wave Back VR</li>
+						<li><strong>Platform:</strong> Meta Quest 3</li>
 						<li><strong>Tools:</strong> Blender, Substance Painter, Unity 6</li>
-						<li><strong>Focus:</strong> Modelling, Texturing, Materials, Environmental Storytelling</li>
+						<li><strong>Focus:</strong> VR-ready modelling, functional assets realistic texturing and material optimisation</li>
 					</ul>
 				</aside>
 			</div>
 		</section>
 
-		<section id="cinematic-video" class="project-section cinematic-video"
+		<!-- Optional video alternative: uncomment when the video file is available, and comment out the image carousel.
+		<section id="media" class="project-section cinematic-video"
 			data-cinematic-video="images/props/walkman/Walkman.mp4">
 			<div class="project-section__header">
 				<h2>Cinematic Video</h2>
@@ -69,7 +65,28 @@
 				src="images/props/walkman/Walkman.mp4"
 				poster="images/props/walkman/BeautyShot_PostProcessing.png"></video>
 		</section>
+		-->
 
+		<!-- Alternative to the cinematic video: comment out the video or this image carousel as appropriate. -->
+		<section id="media" class="project-section project-image-carousel"
+			aria-label="Walkman image carousel">
+			<div class="project-section__header">
+				<h2>Walkman Gallery</h2>
+				<p>Selected renders of the Walkman and cassette props.</p>
+			</div>
+			<div class="project-image-carousel__featured">
+				<img src="images/props/walkman/BeautyShot_PostProcessing.png" alt="Walkman and cassettes post-processed beauty render">
+			</div>
+			<div class="project-image-carousel__thumbnails" role="group" aria-label="Choose a Walkman render">
+				<button type="button" class="project-image-carousel__thumbnail is-active" aria-label="Show Walkman post-processed render" aria-pressed="true" data-src="images/props/walkman/BeautyShot_PostProcessing.png" data-alt="Walkman and cassettes post-processed beauty render"><img src="images/props/walkman/BeautyShot_PostProcessing.png" alt="" aria-hidden="true"></button>
+				<button type="button" class="project-image-carousel__thumbnail" aria-label="Show Walkman render 1" aria-pressed="false" data-src="images/props/walkman/BeautyShotPP_01.png" data-alt="Walkman and cassettes beauty render, view 1"><img src="images/props/walkman/BeautyShotPP_01.png" alt="" aria-hidden="true"></button>
+				<button type="button" class="project-image-carousel__thumbnail" aria-label="Show Walkman render 2" aria-pressed="false" data-src="images/props/walkman/BeautyShotPP_02.png" data-alt="Walkman and cassettes beauty render, view 2"><img src="images/props/walkman/BeautyShotPP_02.png" alt="" aria-hidden="true"></button>
+				<button type="button" class="project-image-carousel__thumbnail" aria-label="Show Walkman render 3" aria-pressed="false" data-src="images/props/walkman/BeautyShotPP_03.png" data-alt="Walkman and cassettes beauty render, view 3"><img src="images/props/walkman/BeautyShotPP_03.png" alt="" aria-hidden="true"></button>
+				<button type="button" class="project-image-carousel__thumbnail" aria-label="Show Walkman render 4" aria-pressed="false" data-src="images/props/walkman/BeautyShotPP_04.png" data-alt="Walkman and cassettes beauty render, view 4"><img src="images/props/walkman/BeautyShotPP_04.png" alt="" aria-hidden="true"></button>
+			</div>
+		</section>
+
+		<!--
 		<section id="gallery" class="project-section project-gallery--fullwidth">
 			<div class="project-section__header">
 				<h2>Gallery</h2>
@@ -83,6 +100,7 @@
 				<img src="images/props/walkman/BeautyShotPP_04.png" alt="Beauty Shot 04" />
 			</div>
 		</section>
+		-->
 
 		<section id="breakdown" class="project-section">
 			<div class="project-section__header">
@@ -113,18 +131,16 @@
 					<div><img src="images\props\walkman\Beauty_Wireframe.png" alt="Wireframe" /></div>
 					<div class="breakdown-text">
 						<h3>Wireframe</h3>
-						<p>UVs were efficiently packed into a single texture set, maximising texture space while
-							keeping the material setup lightweight for real-time use. A non-destructive
-							texturing workflow was used in Substance Painter, with layered masks and procedural
-							generators allowing wear, dirt, rust and surface variation to be adjusted without
-							permanently altering the underlying texture.</p>
+						<p>The wireframe shows the model structure and the forms that define the Walkman and cassette
+							silhouettes. The assets were prepared for close-up VR presentation, with geometry suited
+							to a real-time project.</p>
 					</div>
 				</div>
 			</div>
 
-			<!-- <div class="breakdown-list">
+			<div class="breakdown-list">
 						<div class="breakdown-item">
-							<div><img src="images\props\radio\GameRender.png"
+							<div><img src="images\props\walkman\GameRender.png"
 									alt="Game Render" /></div>
 							<div class="breakdown-text">
 								<h3>Game Render</h3>
@@ -135,30 +151,30 @@
 									permanently altering the underlying texture.</p>
 							</div>
 						</div>
-					</div> -->
+					</div>
 
 			<div class="breakdown-list">
 				<div class="breakdown-item">
-					<div><img src="images\props\walkman\WalkmanFlats.png" alt="TextureBreakdown" /></div>
+					<div><img src="images/props/walkman/WalkmanFlats.png" alt="Walkman Base Color, normal and roughness maps shown alongside a clay render" /></div>
 					<div class="breakdown-text">
 						<h3>Walkman Texture Sets</h3>
-						<p>The prop was designed to communicate its history through material wear, damage and
-							surface detail, using peeling paint, rust and grime to suggest an abandoned carnival
-							environment. The pentagram introduces a subtle occult element, hinting at a darker
-							or potentially supernatural presence without explicitly explaining the narrative.
+						<p>The Walkman's texture breakdown shows its Base Color, normal and roughness maps alongside
+							a clay render. The normal map adds surface definition; roughness controls how each surface
+							reflects light. Carefully varied roughness helps separate materials and gives the prop a
+							more convincing, realistic finish.
 						</p>
 					</div>
 				</div>
 
 				<div class="breakdown-list">
 					<div class="breakdown-item">
-						<div><img src="images\props\walkman\CassettesFlats.png" alt="TextureBreakdown" /></div>
+						<div><img src="images/props/walkman/CassettesFlats.png" alt="Cassette Base Color, normal and roughness maps shown alongside a clay render" /></div>
 						<div class="breakdown-text">
 							<h3>Cassette Texture Sets</h3>
-							<p>The prop was designed to communicate its history through material wear, damage and
-								surface detail, using peeling paint, rust and grime to suggest an abandoned carnival
-								environment. The pentagram introduces a subtle occult element, hinting at a darker
-								or potentially supernatural presence without explicitly explaining the narrative.
+							<p>Eight cassette designs share one material and texture set, reducing the number of
+								separate material assignments while keeping their visual differences. The maps show
+								Base Color, normal and roughness alongside a clay render; roughness variation helps
+								create believable differences in sheen across plastic and labels.
 							</p>
 						</div>
 					</div>

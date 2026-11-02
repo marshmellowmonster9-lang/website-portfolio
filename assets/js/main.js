@@ -272,6 +272,54 @@ try {
 				});
 			}
 
+			// Project image carousels keep one featured image and select it from the thumbnail strip.
+			$('.project-image-carousel').each(function() {
+				var $carousel = $(this);
+				var $featured = $carousel.find('.project-image-carousel__featured img').first();
+				var $thumbnails = $carousel.find('.project-image-carousel__thumbnail');
+				var activeSlide = $thumbnails.index($thumbnails.filter('.is-active').first());
+				var carouselTimer;
+
+				if (!$featured.length || !$thumbnails.length) return;
+				if (activeSlide < 0) activeSlide = 0;
+
+				function showSlide(index, restartTimer) {
+					activeSlide = (index + $thumbnails.length) % $thumbnails.length;
+					var $thumbnail = $thumbnails.eq(activeSlide);
+					$featured.attr('src', $thumbnail.attr('data-src'))
+						.attr('alt', $thumbnail.attr('data-alt') || '');
+					$thumbnails.each(function(thumbnailIndex) {
+						var isActive = thumbnailIndex === activeSlide;
+						$(this).toggleClass('is-active', isActive)
+							.attr('aria-pressed', isActive ? 'true' : 'false');
+					});
+
+					if (restartTimer) scheduleAutoAdvance();
+				}
+
+				function scheduleAutoAdvance() {
+					window.clearInterval(carouselTimer);
+					if ($thumbnails.length > 1) {
+						carouselTimer = window.setInterval(function() {
+							showSlide(activeSlide + 1, false);
+						}, 5000);
+					}
+				}
+
+				$carousel.on('click', '.project-image-carousel__thumbnail', function() {
+					showSlide($thumbnails.index(this), true);
+				});
+				$carousel.on('mouseenter focusin', function() {
+					window.clearInterval(carouselTimer);
+				});
+				$carousel.on('mouseleave', scheduleAutoAdvance);
+				$carousel.on('focusout', function(e) {
+					if (!e.relatedTarget || !$.contains(this, e.relatedTarget)) scheduleAutoAdvance();
+				});
+				showSlide(activeSlide, false);
+				scheduleAutoAdvance();
+			});
+
 			// Lightbox for galleries and level flows.
 			$('body').append('<div id="lightbox-overlay" role="dialog" aria-hidden="true"><button id="lightbox-prev" class="lightbox-control" aria-label="Previous image">‹</button><div id="lightbox-content"></div><button id="lightbox-next" class="lightbox-control" aria-label="Next image">›</button><button id="lightbox-close" aria-label="Close">✕</button></div>');
 

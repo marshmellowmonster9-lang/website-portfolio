@@ -14,8 +14,7 @@
 			<a class="project-nav__link" href="props.html">← Back to portfolio</a>
 			<div class="project-nav__menu">
 				<a href="#overview">Overview</a>
-				<a href="#cinematic-video">Cinematic Video</a>
-				<a href="#gallery">Gallery</a>
+				<a href="#media">Media</a>
 				<a href="#breakdown">Technical Breakdown</a>
 			</div>
 		</nav>
@@ -24,9 +23,9 @@
 			style="background-image: linear-gradient(90deg, rgba(255,143,112,0.28), rgba(13,17,23,0.84) 58%, rgba(13,17,23,0.98)), url('images/props/radio/BeautyShotPP_01.png');">
 			<div class="project-hero__content">
 				<p class="project-hero__eyebrow">Prop Art — Environment</p>
-				<h1>Sci-Fi Bio Vat</h1>
-				<p>A game-ready environment prop created around a worn, abandoned carnival aesthetic, combining stylised
-					storytelling with production-ready modelling and texturing.</p>
+				<h1>Radio</h1>
+				<p>A real-time prop created for Please Wave Back VR, with materials designed to be read clearly
+					at close viewing.</p>
 			</div>
 		</header>
 
@@ -35,33 +34,31 @@
 				<div class="project-card project-card--feature">
 					<div class="project-section__header">
 						<h2>Overview</h2>
-						<p>The Carnival Ticket Booth was created as a personal prop project, focusing on modelling,
-							material definition and environmental storytelling.
-
-							The design combines weathered timber, peeling paint, rusted metal and aged signage to
-							establish a neglected fairground aesthetic. Small details and surface damage were used to
-							give the prop a sense of history and reinforce its darker visual direction.
-
-							The finished asset was prepared for real-time presentation in Unreal Engine 5, with emphasis
-							on a strong silhouette, readable material separation and efficient texture usage.
+						<p>Created for Please Wave Back VR, this radio was modelled and textured as a game-ready prop
+							for a standalone VR experience. The workflow focused on a clear silhouette, readable
+							material definition and useful surface detail at close headset distances, while keeping
+							the asset suitable for real-time use in Unity 6.
 						</p>
 					</div>
-					<p class="project-quote">"A personal prop project completed from modelling to final real-time
-						presentation in a single session."</p>
+					<p class="project-quote">"A VR-ready prop built to balance close-range visual quality with
+						real-time performance."</p>
 				</div>
 				<aside class="project-card">
 					<h3>Key Details</h3>
 					<ul class="project-stat-list">
 						<li><strong>Role:</strong> Prop Artist</li>
+						<li><strong>Project:</strong> Please Wave Back VR</li>
+						<li><strong>Platform:</strong> Meta Quest 3</li>
 						<li><strong>Tools:</strong> Blender, Substance Painter, Unity 6</li>
-						<li><strong>Focus:</strong> Modelling, Texturing, Materials, Environmental Storytelling</li>
+						<li><strong>Focus:</strong> VR-ready modelling, texturing and real-time materials</li>
 					</ul>
 				</aside>
 			</div>
 		</section>
 
-		<section id="cinematic-video" class="project-section cinematic-video"
-			data-cinematic-video="images/props/sci-fi-bio-vat/SciFiBioVat.mp4">
+		<!-- Optional video alternative: uncomment when the video file is available, and comment out the image carousel.
+		<section id="media" class="project-section cinematic-video"
+			data-cinematic-video="images/props/radio/Radio.mp4">
 			<div class="project-section__header">
 				<h2>Cinematic Video</h2>
 				<p>Rendered presentation of the finished prop in Blender.</p>
@@ -69,7 +66,28 @@
 			<video class="project-video" controls data-autoplay="true" data-volume="0.2" playsinline loop
 				src="images/props/radio/Radio.mp4" poster="images/props/radio/BeautyShot_PostProcessing.png"></video>
 		</section>
+		-->
 
+		<!-- Alternative to the cinematic video: comment out the video or this image carousel as appropriate. -->
+		<section id="media" class="project-section project-image-carousel"
+			aria-label="Radio image carousel">
+			<div class="project-section__header">
+				<h2>Radio Gallery</h2>
+				<p>Selected renders of the finished radio prop.</p>
+			</div>
+			<div class="project-image-carousel__featured">
+				<img src="images/props/radio/BeautyShot_PostProcessing.png" alt="Radio prop post-processed beauty render">
+			</div>
+			<div class="project-image-carousel__thumbnails" role="group" aria-label="Choose a radio render">
+				<button type="button" class="project-image-carousel__thumbnail is-active" aria-label="Show radio post-processed render" aria-pressed="true" data-src="images/props/radio/BeautyShot_PostProcessing.png" data-alt="Radio prop post-processed beauty render"><img src="images/props/radio/BeautyShot_PostProcessing.png" alt="" aria-hidden="true"></button>
+				<button type="button" class="project-image-carousel__thumbnail" aria-label="Show radio render 1" aria-pressed="false" data-src="images/props/radio/BeautyShotPP_01.png" data-alt="Radio prop beauty render, view 1"><img src="images/props/radio/BeautyShotPP_01.png" alt="" aria-hidden="true"></button>
+				<button type="button" class="project-image-carousel__thumbnail" aria-label="Show radio render 2" aria-pressed="false" data-src="images/props/radio/BeautyShotPP_02.png" data-alt="Radio prop beauty render, view 2"><img src="images/props/radio/BeautyShotPP_02.png" alt="" aria-hidden="true"></button>
+				<button type="button" class="project-image-carousel__thumbnail" aria-label="Show radio render 3" aria-pressed="false" data-src="images/props/radio/BeautyShotPP_03.png" data-alt="Radio prop beauty render, view 3"><img src="images/props/radio/BeautyShotPP_03.png" alt="" aria-hidden="true"></button>
+				<button type="button" class="project-image-carousel__thumbnail" aria-label="Show radio render 4" aria-pressed="false" data-src="images/props/radio/BeautyShotPP_04.png" data-alt="Radio prop beauty render, view 4"><img src="images/props/radio/BeautyShotPP_04.png" alt="" aria-hidden="true"></button>
+			</div>
+		</section>
+
+		<!--
 		<section id="gallery" class="project-section project-gallery--fullwidth">
 			<div class="project-section__header">
 				<h2>Gallery</h2>
@@ -83,6 +101,7 @@
 				<img src="images/props/radio/BeautyShotPP_04.png" alt="Beauty Shot 04" />
 			</div>
 		</section>
+		-->
 
 		<section id="breakdown" class="project-section">
 			<div class="project-section__header">
@@ -113,38 +132,34 @@
 					<div><img src="images\props\radio\Beauty_Wireframe.png" alt="Wireframe" /></div>
 					<div class="breakdown-text">
 						<h3>Wireframe</h3>
-						<p>UVs were efficiently packed into a single texture set, maximising texture space while
-							keeping the material setup lightweight for real-time use. A non-destructive
-							texturing workflow was used in Substance Painter, with layered masks and procedural
-							generators allowing wear, dirt, rust and surface variation to be adjusted without
-							permanently altering the underlying texture.</p>
+						<p>The wireframe view shows how the radio's forms are built into a clean, readable silhouette.
+							Geometry and shape definition are planned for close inspection while remaining suitable
+							for a real-time VR scene, with most of the heavylifting done by baking the high-poly model and using the normal map.</p>
 					</div>
 				</div>
 			</div>
 
-			<div class="breakdown-list">
+			<!-- <div class="breakdown-list">
 				<div class="breakdown-item">
 					<div><img src="images\props\radio\GameRender.png" alt="Game Render" /></div>
 					<div class="breakdown-text">
 						<h3>Game Render</h3>
-						<p>UVs were efficiently packed into a single texture set, maximising texture space while
-							keeping the material setup lightweight for real-time use. A non-destructive
-							texturing workflow was used in Substance Painter, with layered masks and procedural
-							generators allowing wear, dirt, rust and surface variation to be adjusted without
-							permanently altering the underlying texture.</p>
+						<p>The in-project render checks that the radio's silhouette, material separation and surface
+							detail remain legible under real-time lighting, helping validate the asset in its intended
+							VR use rather than relying on a beauty render alone.</p>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="breakdown-list">
 				<div class="breakdown-item">
-					<div><img src="images\props\radio\Flats.png" alt="TextureBreakdown" /></div>
+					<div><img src="images/props/radio/Flats.png" alt="Radio Base Color, normal and roughness maps shown alongside a clay render" /></div>
 					<div class="breakdown-text">
 						<h3>Texture Sets</h3>
-						<p>The prop was designed to communicate its history through material wear, damage and
-							surface detail, using peeling paint, rust and grime to suggest an abandoned carnival
-							environment. The pentagram introduces a subtle occult element, hinting at a darker
-							or potentially supernatural presence without explicitly explaining the narrative.
+						<p>This breakdown shows the base colour, normal and roughness maps alongside a clay render.
+							The normal map adds surface definition, while roughness controls how broadly or sharply
+							light reflects from each material. Deliberate roughness variation is essential for
+							distinguishing surfaces and creating a convincing, realistic finish in real-time lighting.
 						</p>
 					</div>
 				</div>

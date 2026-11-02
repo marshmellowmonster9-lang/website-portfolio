@@ -14,8 +14,7 @@
 			<a class="project-nav__link" href="props.html">← Back to portfolio</a>
 			<div class="project-nav__menu">
 				<a href="#overview">Overview</a>
-				<a href="#cinematic-video">Cinematic Video</a>
-				<a href="#gallery">Gallery</a>
+				<a href="#media">Media</a>
 				<a href="#breakdown">Technical Breakdown</a>
 			</div>
 		</nav>
@@ -25,8 +24,8 @@
 			<div class="project-hero__content">
 				<p class="project-hero__eyebrow">Prop Art — Environment</p>
 				<h1>Sci-Fi Bio Vat</h1>
-				<p>A game-ready environment prop created around a worn, abandoned carnival aesthetic, combining stylised
-					storytelling with production-ready modelling and texturing.</p>
+				<p>A real-time bio-tech prop created for Rogue Directive: Genesis, designed for a game
+					environment.</p>
 			</div>
 		</header>
 
@@ -35,32 +34,28 @@
 				<div class="project-card project-card--feature">
 					<div class="project-section__header">
 						<h2>Overview</h2>
-						<p>The Carnival Ticket Booth was created as a personal prop project, focusing on modelling,
-							material definition and environmental storytelling.
-
-							The design combines weathered timber, peeling paint, rusted metal and aged signage to
-							establish a neglected fairground aesthetic. Small details and surface damage were used to
-							give the prop a sense of history and reinforce its darker visual direction.
-
-							The finished asset was prepared for real-time presentation in Unreal Engine 5, with emphasis
-							on a strong silhouette, readable material separation and efficient texture usage.
+						<p>Created for Rogue Directive: Genesis, the Bio Vegetation Vat supports the environmental
+							storytelling and gameplay of the sci-fi biotechnology facility.
 						</p>
 					</div>
-					<p class="project-quote">"A personal prop project completed from modelling to final real-time
-						presentation in a single session."</p>
+					<p class="project-quote">"A functional environment prop that helps make the facility's
+						biotechnology setting tangible."</p>
 				</div>
 				<aside class="project-card">
 					<h3>Key Details</h3>
 					<ul class="project-stat-list">
 						<li><strong>Role:</strong> Prop Artist</li>
+						<li><strong>Project:</strong> Rogue Directive: Genesis</li>
+						<li><strong>Platform:</strong> PC</li>
 						<li><strong>Tools:</strong> Blender, Substance Painter, Unity 6</li>
-						<li><strong>Focus:</strong> Modelling, Texturing, Materials, Environmental Storytelling</li>
+						<li><strong>Focus:</strong> Real-time asset creation, texturing, functionality and environmental storytelling</li>
 					</ul>
 				</aside>
 			</div>
 		</section>
 
-		<section id="cinematic-video" class="project-section cinematic-video"
+		<!-- Optional video alternative: uncomment when the video file is available, and comment out the image carousel.
+		<section id="media" class="project-section cinematic-video"
 			data-cinematic-video="images/props/sci-fi-bio-vat/SciFiBioVat.mp4">
 			<div class="project-section__header">
 				<h2>Cinematic Video</h2>
@@ -70,7 +65,28 @@
 				src="images/props/sci-fi-bio-vat/SciFiBioVat.mp4"
 				poster="images/props/sci-fi-bio-vat/BeautyShot_PostProcessing.png"></video>
 		</section>
+		-->
 
+		<!-- Alternative to the cinematic video: comment out the video or this image carousel as appropriate. -->
+		<section id="media" class="project-section project-image-carousel"
+			aria-label="Sci-Fi Bio Vat image carousel">
+			<div class="project-section__header">
+				<h2>Bio Vat Gallery</h2>
+				<p>Selected renders of the finished Bio Vat prop.</p>
+			</div>
+			<div class="project-image-carousel__featured">
+				<img src="images/props/sci-fi-bio-vat/BeautyShot_PostProcessing.png" alt="Sci-Fi Bio Vat post-processed beauty render">
+			</div>
+			<div class="project-image-carousel__thumbnails" role="group" aria-label="Choose a Bio Vat render">
+				<button type="button" class="project-image-carousel__thumbnail is-active" aria-label="Show Bio Vat post-processed render" aria-pressed="true" data-src="images/props/sci-fi-bio-vat/BeautyShot_PostProcessing.png" data-alt="Sci-Fi Bio Vat post-processed beauty render"><img src="images/props/sci-fi-bio-vat/BeautyShot_PostProcessing.png" alt="" aria-hidden="true"></button>
+				<button type="button" class="project-image-carousel__thumbnail" aria-label="Show Bio Vat render 1" aria-pressed="false" data-src="images/props/sci-fi-bio-vat/BeautyShotPP_01.png" data-alt="Sci-Fi Bio Vat beauty render, view 1"><img src="images/props/sci-fi-bio-vat/BeautyShotPP_01.png" alt="" aria-hidden="true"></button>
+				<button type="button" class="project-image-carousel__thumbnail" aria-label="Show Bio Vat render 2" aria-pressed="false" data-src="images/props/sci-fi-bio-vat/BeautyShotPP_02.png" data-alt="Sci-Fi Bio Vat beauty render, view 2"><img src="images/props/sci-fi-bio-vat/BeautyShotPP_02.png" alt="" aria-hidden="true"></button>
+				<button type="button" class="project-image-carousel__thumbnail" aria-label="Show Bio Vat render 3" aria-pressed="false" data-src="images/props/sci-fi-bio-vat/BeautyShotPP_03.png" data-alt="Sci-Fi Bio Vat beauty render, view 3"><img src="images/props/sci-fi-bio-vat/BeautyShotPP_03.png" alt="" aria-hidden="true"></button>
+				<button type="button" class="project-image-carousel__thumbnail" aria-label="Show Bio Vat render 4" aria-pressed="false" data-src="images/props/sci-fi-bio-vat/BeautyShotPP_04.png" data-alt="Sci-Fi Bio Vat beauty render, view 4"><img src="images/props/sci-fi-bio-vat/BeautyShotPP_04.png" alt="" aria-hidden="true"></button>
+			</div>
+		</section>
+
+		<!--
 		<section id="gallery" class="project-section project-gallery--fullwidth">
 			<div class="project-section__header">
 				<h2>Gallery</h2>
@@ -84,6 +100,7 @@
 				<img src="images/props/sci-fi-bio-vat/BeautyShotPP_04.png" alt="Beauty Shot 04" />
 			</div>
 		</section>
+		-->
 
 		<section id="breakdown" class="project-section">
 			<div class="project-section__header">
@@ -111,41 +128,36 @@
 
 				<div class="breakdown-list">
 					<div class="breakdown-item">
-						<div><img src="images\props\sci-fi-bio-vat\Beauty_Wireframe.png" alt="Wireframe" /></div>
+						<div><img src="images/props/sci-fi-bio-vat/Beauty_Wireframe.png" alt="Sci-Fi Bio Vat wireframe" /></div>
 						<div class="breakdown-text">
 							<h3>Wireframe</h3>
-							<p>UVs were efficiently packed into a single texture set, maximising texture space while
-								keeping the material setup lightweight for real-time use. A non-destructive
-								texturing workflow was used in Substance Painter, with layered masks and procedural
-								generators allowing wear, dirt, rust and surface variation to be adjusted without
-								permanently altering the underlying texture.</p>
+							<p>The wireframe view reveals the mesh structure. Geometry is shaped to support the prop's distinctive design while keeping it
+								suitable for a real-time PC game environment.</p>
 						</div>
 					</div>
 				</div>
 
 				<div class="breakdown-list">
 					<div class="breakdown-item">
-						<div><img src="images\props\sci-fi-bio-vat\GameRender.png" alt="Game Render" /></div>
+						<div><img src="images/props/sci-fi-bio-vat/GameRender.png" alt="Sci-Fi Bio Vat game render" /></div>
 						<div class="breakdown-text">
 							<h3>Game Render</h3>
-							<p>UVs were efficiently packed into a single texture set, maximising texture space while
-								keeping the material setup lightweight for real-time use. A non-destructive
-								texturing workflow was used in Substance Painter, with layered masks and procedural
-								generators allowing wear, dirt, rust and surface variation to be adjusted without
-								permanently altering the underlying texture.</p>
+							<p>The game render checks the asset's material response, glass feature and visual readability
+								under baked lighting, showing how the prop sits within its intended biotechnology
+								setting.</p>
 						</div>
 					</div>
 				</div>
 
 				<div class="breakdown-list">
 					<div class="breakdown-item">
-						<div><img src="images\props\sci-fi-bio-vat\Flats.png" alt="TextureBreakdown" /></div>
+						<div><img src="images/props/sci-fi-bio-vat/Flats.png" alt="Bio Vat Base Color, normal and roughness maps shown alongside a clay render" /></div>
 						<div class="breakdown-text">
 							<h3>Texture Sets</h3>
-							<p>The prop was designed to communicate its history through material wear, damage and
-								surface detail, using peeling paint, rust and grime to suggest an abandoned carnival
-								environment. The pentagram introduces a subtle occult element, hinting at a darker
-								or potentially supernatural presence without explicitly explaining the narrative.
+							<p>This breakdown shows the base colour, normal, metallic and roughness maps alongside a clay render.
+								The normal map adds surface definition, while roughness controls how broadly or sharply
+								light reflects from each material. Deliberate roughness variation is essential for
+								distinguishing surfaces and creating a convincing, realistic finish and interesting interactions with the environment's lighting.
 							</p>
 						</div>
 					</div>
